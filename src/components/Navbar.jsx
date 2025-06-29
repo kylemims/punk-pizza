@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Navbar() {
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -81,4 +81,4 @@ export default function Navbar() {
       )}
     </nav>
   );
-}
+};

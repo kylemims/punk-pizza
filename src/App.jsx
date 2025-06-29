@@ -1,13 +1,11 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
 
-function App() {
+export const App = () => {
   return (
     <div className="min-h-screen bg-crust">
       <Navbar />
       <Hero />
     </div>
   );
-}
-
-export default App;
+};

@@ -1,4 +1,4 @@
-export default function Hero() {
+export const Hero = () => {
   return (
     <section className="bg-crust text-black flex flex-col items-center justify-center text-center px-4 py-12 md:py-24">
       <img
@@ -17,4 +17,4 @@ export default function Hero() {
       </a>
     </section>
   );
-}
+};
