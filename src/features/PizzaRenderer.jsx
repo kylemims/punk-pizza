@@ -12,7 +12,8 @@ export const PizzaRenderer = ({ sauce, cheese, toppings }) => {
   ].filter(Boolean);
 
   return (
-    <div className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
+    <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px]">
+      {" "}
       {layers.map(({ src, isCrust }, index) => (
         <img
           key={index}

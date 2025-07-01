@@ -28,7 +28,7 @@ export const PizzaBuilder = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center space-x-4 mb-8">
+      <div className="flex flex-wrap justify-center gap-2 mb-8">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -40,7 +40,6 @@ export const PizzaBuilder = () => {
           </button>
         ))}
       </div>
-
       {/* Tab Content */}
       <div>
         {activeTab === "size" && (
@@ -87,7 +86,7 @@ export const PizzaBuilder = () => {
                 <button
                   key={option}
                   onClick={() => setCheese(option)}
-                  className={`px-4 py-2 rounded-xl ${
+                  className={`px-3 py-2 rounded-xl ${
                     cheese === option ? "bg-redriot text-white" : "bg-white text-black border"
                   }`}>
                   {option.replace("-", " ").toUpperCase()}

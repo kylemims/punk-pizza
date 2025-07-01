@@ -5,7 +5,7 @@ export const Navbar = () => {
 
   return (
     <nav className="bg-redriot text-white font-luckiest">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <div className="w-full px-4 flex items-center justify-between h-16">
         <a href="/" className="text-2xl hover:text-limepunk transition">
           Jake N' Bakes
         </a>
