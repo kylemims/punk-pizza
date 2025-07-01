@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         luckiest: ['"Luckiest Guy"', "cursive"],
+        sans: ["Poppins", "sans-serif"],
       },
       colors: {
         redriot: "#D72638",
