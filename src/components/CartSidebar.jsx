@@ -1,33 +1,33 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const CartSidebar = ({ cart, setCart, isOpen, setIsOpen }) => {
-  const [orderType, setOrderType] = useState("delivery");
-  const [tip, setTip] = useState(0);
-  const [note, setNote] = useState("");
-
-  // Pricing
+export const CartSidebar = ({
+  cart,
+  setCart,
+  isOpen,
+  setIsOpen,
+  orderType,
+  setOrderType,
+  tip,
+  setTip,
+  note,
+  setNote,
+}) => {
   const sizePrices = {
     small: 10,
     medium: 14,
     large: 18,
   };
 
-  const getSubtotal = () => {
-    return cart.reduce((total, pizza) => {
-      const base = sizePrices[pizza.size] || 0;
-      return total + base;
-    }, 0);
-  };
-
-  const handleRemove = (index) => {
-    const newCart = [...cart];
-    newCart.splice(index, 1);
-    setCart(newCart);
-  };
+  const getSubtotal = () => cart.reduce((total, pizza) => total + (sizePrices[pizza.size] || 0), 0);
 
   const subtotal = getSubtotal();
   const total = subtotal + Number(tip || 0);
+
+  const handleRemove = (index) => {
+    const updated = [...cart];
+    updated.splice(index, 1);
+    setCart(updated);
+  };
 
   return (
     <div
@@ -72,7 +72,6 @@ export const CartSidebar = ({ cart, setCart, isOpen, setIsOpen }) => {
       </div>
 
       <div className="p-4 border-t border-white space-y-4">
-        {/* Delivery or Takeout */}
         <div>
           <label className="block mb-1 font-luckiest">Delivery or Takeout</label>
           <select
@@ -84,7 +83,6 @@ export const CartSidebar = ({ cart, setCart, isOpen, setIsOpen }) => {
           </select>
         </div>
 
-        {/* Tip */}
         <div>
           <label className="block mb-1 font-luckiest">Tip ($)</label>
           <input
@@ -97,7 +95,6 @@ export const CartSidebar = ({ cart, setCart, isOpen, setIsOpen }) => {
           />
         </div>
 
-        {/* Special Note */}
         <div>
           <label className="block mb-1 font-luckiest">Special Note</label>
           <textarea
@@ -108,7 +105,6 @@ export const CartSidebar = ({ cart, setCart, isOpen, setIsOpen }) => {
             placeholder="Anything we should know?"></textarea>
         </div>
 
-        {/* Totals */}
         <div className="border-t border-white pt-2">
           <p>
             <strong>Subtotal:</strong> ${subtotal}
@@ -118,7 +114,6 @@ export const CartSidebar = ({ cart, setCart, isOpen, setIsOpen }) => {
           </p>
         </div>
 
-        {/* Checkout Button */}
         <Link
           to="/checkout"
           onClick={() => setIsOpen(false)}

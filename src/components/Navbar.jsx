@@ -38,7 +38,7 @@ export const Navbar = ({ setIsCartOpen }) => {
             onClick={() => setIsCartOpen(true)}
             className="hover:text-limepunk flex items-center">
             <img src={CartIcon} alt="Cart" className="w-6 h-6 mr-1" />
-            <span>Cart</span>
+            {/* <span>Cart</span> */}
           </button>
         </div>
 

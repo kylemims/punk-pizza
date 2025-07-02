@@ -5,16 +5,14 @@ export const OrderSummary = ({ cart, orderType, tip, note }) => {
     large: 18,
   };
 
-  const subtotal = cart.reduce((total, pizza) => {
-    return total + (sizePrices[pizza.size] || 0);
-  }, 0);
+  const subtotal = cart.reduce((total, pizza) => total + (sizePrices[pizza.size] || 0), 0);
 
   const total = subtotal + Number(tip || 0);
 
   return (
-    <div className="bg-white text-black rounded-lg p-4 w-full max-w-md space-y-4">
+    <div className="bg-white text-black rounded-lg p-6 w-[320px] sm:w-[400px] md:w-[450px] lg:w-[500px] xl:w-[550px] space-y-4">
+      {" "}
       <h3 className="text-2xl font-luckiest">Order Summary</h3>
-
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -31,7 +29,7 @@ export const OrderSummary = ({ cart, orderType, tip, note }) => {
             </p>
             <p>
               <strong>Toppings:</strong>{" "}
-              {pizza.toppings.length ? pizza.toppings.join(", ") : "None"}
+              {pizza.toppings.length > 0 ? pizza.toppings.join(", ") : "None"}
             </p>
             <p>
               <strong>Price:</strong> ${sizePrices[pizza.size] || 0}
@@ -39,7 +37,6 @@ export const OrderSummary = ({ cart, orderType, tip, note }) => {
           </div>
         ))
       )}
-
       <div className="border-t border-black pt-2 space-y-1">
         <p>
           <strong>Order Type:</strong> {orderType}
