@@ -1,0 +1,30 @@
+{
+  "sizes": [
+    { "id": "small", "label": "Small", "price": 10 },
+    { "id": "medium", "label": "Medium", "price": 14 },
+    { "id": "large", "label": "Large", "price": 18 }
+  ],
+  "sauces": [
+    { "id": "red-sauce", "label": "Red Sauce", "price": 1 },
+    { "id": "bbq-sauce", "label": "BBQ Sauce", "price": 1.25 },
+    { "id": "white-sauce", "label": "White Sauce", "price": 1.5 }
+  ],
+  "cheeses": [
+    { "id": "cheese", "label": "Cheese", "price": 1 },
+    { "id": "extra-cheese", "label": "Extra Cheese", "price": 2 },
+    { "id": "none", "label": "No Cheese", "price": 0 }
+  ],
+  "toppings": [
+    { "id": "pepperoni", "label": "Pepperoni", "price": 1.25 },
+    { "id": "sausage", "label": "Sausage", "price": 1.25 },
+    { "id": "bacon", "label": "Bacon", "price": 1.5 },
+    { "id": "mushroom", "label": "Mushroom", "price": 0.75 },
+    { "id": "red-pepper", "label": "Red Pepper", "price": 0.75 },
+    { "id": "green-pepper", "label": "Green Pepper", "price": 0.75 },
+    { "id": "onion", "label": "Onion", "price": 0.5 },
+    { "id": "tomato", "label": "Tomato", "price": 0.75 },
+    { "id": "olive", "label": "Olive", "price": 0.75 },
+    { "id": "pineapple", "label": "Pineapple", "price": 1 },
+    { "id": "spinach", "label": "Spinach", "price": 0.5 }
+  ]
+}
