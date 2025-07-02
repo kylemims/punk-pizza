@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { PizzaRenderer } from "./PizzaRenderer";
+import { useCart } from "../context/useCart";
 
 export const PizzaBuilder = () => {
   const [activeTab, setActiveTab] = useState("size");
-
-  // Pizza state
   const [size, setSize] = useState("");
   const [sauce, setSauce] = useState("");
   const [cheese, setCheese] = useState("");
   const [toppings, setToppings] = useState([]);
+
+  const { addToCart } = useCart(); // ✅ Access cart function
 
   const handleToppingChange = (topping) => {
     setToppings((prev) =>
@@ -16,6 +17,11 @@ export const PizzaBuilder = () => {
     );
   };
 
+  const handleAddToCart = () => {
+    if (!size || !sauce || !cheese) return alert("Complete your pizza first!");
+    addToCart({ size, sauce, cheese, toppings });
+    // Optional: reset form or go to cart
+  };
   const tabs = ["size", "sauce", "cheese", "toppings", "review"];
 
   return (
@@ -144,7 +150,9 @@ export const PizzaBuilder = () => {
               <strong>Toppings:</strong> {toppings.length > 0 ? toppings.join(", ") : "None"}
             </p>
 
-            <button className="bg-redriot text-white px-6 py-3 rounded-xl mt-6 font-luckiest hover:bg-limepunk hover:text-black transition">
+            <button
+              onClick={handleAddToCart}
+              className="bg-redriot text-white px-6 py-3 rounded-xl mt-6 font-luckiest hover:bg-limepunk hover:text-black transition">
               Add Pizza to Order
             </button>
           </>
