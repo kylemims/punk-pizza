@@ -3,7 +3,7 @@ export const PizzaRenderer = ({ sauce, cheese, toppings }) => {
 
   const layers = [
     { src: `${basePath}crust.svg`, isCrust: true },
-    sauce ? { src: `${basePath}${sauce}.svg`, isCrust: false } : null,
+    sauce && sauce !== "none" ? { src: `${basePath}${sauce}.svg`, isCrust: false } : null,
     cheese && cheese !== "none" ? { src: `${basePath}${cheese}.svg`, isCrust: false } : null,
     ...toppings.map((topping) => ({
       src: `${basePath}${topping}.svg`,

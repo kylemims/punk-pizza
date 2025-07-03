@@ -7,7 +7,8 @@
   "sauces": [
     { "id": "red-sauce", "label": "Red Sauce", "price": 1 },
     { "id": "bbq-sauce", "label": "BBQ Sauce", "price": 1.25 },
-    { "id": "white-sauce", "label": "White Sauce", "price": 1.5 }
+    { "id": "white-sauce", "label": "White Sauce", "price": 1.5 },
+    { "id": "none", "label": "No Sauce", "price": 0 }
   ],
   "cheeses": [
     { "id": "cheese", "label": "Cheese", "price": 1 },

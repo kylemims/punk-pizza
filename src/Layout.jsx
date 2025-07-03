@@ -1,17 +1,32 @@
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { CartSidebar } from "./components/CartSidebar";
-import { useState } from "react";
+import { getSizes, getSauces, getCheeses, getToppings } from "./services/ingredientService";
 
 export const Layout = () => {
+  // Cart and order-related state
   const [cart, setCart] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
-  // Global order details for checkout
   const [orderType, setOrderType] = useState("delivery");
   const [tip, setTip] = useState(0);
   const [note, setNote] = useState("");
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Ingredient data state
+  const [sizes, setSizes] = useState([]);
+  const [sauces, setSauces] = useState([]);
+  const [cheeses, setCheeses] = useState([]);
+  const [toppings, setToppings] = useState([]);
+
+  useEffect(() => {
+    getSizes().then(setSizes);
+    getSauces().then(setSauces);
+    getCheeses().then(setCheeses);
+    getToppings().then(setToppings);
+  }, []);
+
+  const ingredientData = { sizes, sauces, cheeses, toppings };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -28,6 +43,7 @@ export const Layout = () => {
             setTip,
             note,
             setNote,
+            ingredientData,
           }}
         />
       </main>
@@ -45,6 +61,7 @@ export const Layout = () => {
         setTip={setTip}
         note={note}
         setNote={setNote}
+        ingredientData={ingredientData}
       />
     </div>
   );
