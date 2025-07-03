@@ -1,27 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PizzaRenderer } from "./PizzaRenderer";
 import { useCart } from "../context/useCart";
+import { getSizes, getSauces, getCheeses, getToppings } from "../services/ingredientService";
 
 export const PizzaBuilder = () => {
   const [activeTab, setActiveTab] = useState("size");
+
+  const [sizes, setSizes] = useState([]);
+  const [sauces, setSauces] = useState([]);
+  const [cheeses, setCheeses] = useState([]);
+  const [toppingsList, setToppingsList] = useState([]);
+
   const [size, setSize] = useState("");
   const [sauce, setSauce] = useState("");
   const [cheese, setCheese] = useState("");
   const [toppings, setToppings] = useState([]);
 
-  const { addToCart } = useCart(); // ✅ Access cart function
+  const { addToCart } = useCart();
 
-  const handleToppingChange = (topping) => {
+  useEffect(() => {
+    getSizes().then(setSizes);
+    getSauces().then(setSauces);
+    getCheeses().then(setCheeses);
+    getToppings().then(setToppingsList);
+  }, []);
+
+  const handleToppingChange = (toppingId) => {
     setToppings((prev) =>
-      prev.includes(topping) ? prev.filter((item) => item !== topping) : [...prev, topping]
+      prev.includes(toppingId) ? prev.filter((item) => item !== toppingId) : [...prev, toppingId]
     );
   };
 
   const handleAddToCart = () => {
-    if (!size || !sauce || !cheese) return alert("Complete your pizza first!");
+    if (!size || !sauce || !cheese) return alert("Complete your pizza before adding!");
+
     addToCart({ size, sauce, cheese, toppings });
-    // Optional: reset form or go to cart
   };
+
   const tabs = ["size", "sauce", "cheese", "toppings", "review"];
 
   return (
@@ -46,20 +61,21 @@ export const PizzaBuilder = () => {
           </button>
         ))}
       </div>
+
       {/* Tab Content */}
       <div>
         {activeTab === "size" && (
           <>
             <h3 className="text-2xl font-luckiest mb-2">Choose Pizza Size</h3>
             <div className="flex gap-4 mb-6">
-              {["small", "medium", "large"].map((option) => (
+              {sizes.map(({ id, label }) => (
                 <button
-                  key={option}
-                  onClick={() => setSize(option)}
+                  key={id}
+                  onClick={() => setSize(id)}
                   className={`px-4 py-2 rounded-xl ${
-                    size === option ? "bg-redriot text-white" : "bg-white text-black border"
+                    size === id ? "bg-redriot text-white" : "bg-white text-black border"
                   }`}>
-                  {option.toUpperCase()}
+                  {label.toUpperCase()}
                 </button>
               ))}
             </div>
@@ -70,14 +86,14 @@ export const PizzaBuilder = () => {
           <>
             <h3 className="text-2xl font-luckiest mb-2">Choose Sauce</h3>
             <div className="flex flex-wrap gap-4 mb-6">
-              {["red-sauce", "bbq-sauce", "white-sauce"].map((option) => (
+              {sauces.map(({ id, label }) => (
                 <button
-                  key={option}
-                  onClick={() => setSauce(option)}
+                  key={id}
+                  onClick={() => setSauce(id)}
                   className={`px-4 py-2 rounded-xl ${
-                    sauce === option ? "bg-redriot text-white" : "bg-white text-black border"
+                    sauce === id ? "bg-redriot text-white" : "bg-white text-black border"
                   }`}>
-                  {option.replace("-", " ").toUpperCase()}
+                  {label.toUpperCase()}
                 </button>
               ))}
             </div>
@@ -88,14 +104,14 @@ export const PizzaBuilder = () => {
           <>
             <h3 className="text-2xl font-luckiest mb-2">Cheese Options</h3>
             <div className="flex gap-4">
-              {["cheese", "extra-cheese", "none"].map((option) => (
+              {cheeses.map(({ id, label }) => (
                 <button
-                  key={option}
-                  onClick={() => setCheese(option)}
+                  key={id}
+                  onClick={() => setCheese(id)}
                   className={`px-3 py-2 rounded-xl ${
-                    cheese === option ? "bg-redriot text-white" : "bg-white text-black border"
+                    cheese === id ? "bg-redriot text-white" : "bg-white text-black border"
                   }`}>
-                  {option.replace("-", " ").toUpperCase()}
+                  {label.toUpperCase()}
                 </button>
               ))}
             </div>
@@ -106,28 +122,14 @@ export const PizzaBuilder = () => {
           <>
             <h3 className="text-2xl font-luckiest mb-2">Toppings</h3>
             <div className="flex flex-wrap gap-4">
-              {[
-                "pepperoni",
-                "sausage",
-                "bacon",
-                "mushroom",
-                "red-pepper",
-                "green-pepper",
-                "onion",
-                "tomato",
-                "olive",
-                "pineapple",
-                "spinach",
-              ].map((topping) => (
+              {toppingsList.map(({ id, label }) => (
                 <button
-                  key={topping}
-                  onClick={() => handleToppingChange(topping)}
+                  key={id}
+                  onClick={() => handleToppingChange(id)}
                   className={`px-4 py-2 rounded-xl ${
-                    toppings.includes(topping)
-                      ? "bg-redriot text-white"
-                      : "bg-white text-black border"
+                    toppings.includes(id) ? "bg-redriot text-white" : "bg-white text-black border"
                   }`}>
-                  {topping.replace("-", " ").toUpperCase()}
+                  {label.toUpperCase()}
                 </button>
               ))}
             </div>
