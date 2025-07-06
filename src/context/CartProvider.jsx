@@ -1,3 +1,4 @@
+// ✅ CartProvider.jsx
 import { useState } from "react";
 import { CartContext } from "./CartContext";
 
@@ -6,6 +7,8 @@ export const CartProvider = ({ children }) => {
   const [orderType, setOrderType] = useState("delivery");
   const [tip, setTip] = useState(0);
   const [note, setNote] = useState("");
+  const [editPizza, setEditPizza] = useState(null);
+  const [editIndex, setEditIndex] = useState(null);
 
   const addToCart = (pizza) => {
     setCart((prev) => [...prev, pizza]);
@@ -18,6 +21,14 @@ export const CartProvider = ({ children }) => {
   };
 
   const clearCart = () => setCart([]);
+
+  const updatePizzaAtIndex = (updatedPizza, index) => {
+    const updatedCart = [...cart];
+    updatedCart[index] = updatedPizza;
+    setCart(updatedCart);
+    setEditIndex(null);
+    setEditPizza(null);
+  };
 
   return (
     <CartContext.Provider
@@ -33,6 +44,11 @@ export const CartProvider = ({ children }) => {
         setTip,
         note,
         setNote,
+        editIndex,
+        setEditIndex,
+        editPizza,
+        setEditPizza,
+        updatePizzaAtIndex,
       }}>
       {children}
     </CartContext.Provider>
