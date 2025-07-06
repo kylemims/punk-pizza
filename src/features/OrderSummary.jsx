@@ -2,18 +2,20 @@ import { useCart } from "../context/useCart";
 import { calculatePizzaPrice } from "../utils/calculatePizzaPrice";
 import { useEffect, useState } from "react";
 import { getSizes, getSauces, getCheeses, getToppings } from "../services/ingredientService";
+import { useNavigate } from "react-router-dom";
 
 export const OrderSummary = () => {
-  const { cart, orderType, tip, note } = useCart();
+  const { cart, orderType, tip, note, setEditPizza, setEditIndex } = useCart();
+
   const [ingredients, setIngredients] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    Promise.all([getSizes(), getSauces(), getCheeses(), getToppings()]).then(
-      ([sizes, sauces, cheeses, toppings]) => {
-        setIngredients({ sizes, sauces, cheeses, toppings });
-      }
-    );
+    Promise.all([getSizes(), getSauces(), getCheeses(), getToppings()]).then(([sizes, sauces, cheeses, toppings]) => {
+      setIngredients({ sizes, sauces, cheeses, toppings });
+    });
   }, []);
+
   if (!ingredients) return null;
 
   const subtotal = cart.reduce((total, pizza) => {
@@ -30,7 +32,9 @@ export const OrderSummary = () => {
         <p>Your cart is empty.</p>
       ) : (
         cart.map((pizza, index) => (
-          <div key={index} className="border border-black rounded p-2">
+          <div
+            key={index}
+            className="border border-black rounded p-2">
             <p>
               <strong>Size:</strong> {pizza.size}
             </p>
@@ -44,8 +48,18 @@ export const OrderSummary = () => {
               <strong>Toppings:</strong> {pizza.toppings?.join(", ") || "None"}
             </p>
             <p>
-              <strong>Price:</strong> {calculatePizzaPrice(pizza, ingredients)}
+              <strong>Price:</strong> ${calculatePizzaPrice(pizza, ingredients)}
             </p>
+
+            <button
+              onClick={() => {
+                setEditIndex(index);
+                setEditPizza(pizza);
+                navigate("/pizza-builder");
+              }}
+              className="text-limepunk underline font-bold text-md mt-1">
+              Edit
+            </button>
           </div>
         ))
       )}

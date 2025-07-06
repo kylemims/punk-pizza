@@ -13,3 +13,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 npm run dev
 npm run db
+test CC: 4242424242424242

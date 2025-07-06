@@ -28,13 +28,10 @@ export const PizzaBuilder = () => {
   }, []);
 
   const handleToppingChange = (toppingId) => {
-    setToppings((prev) =>
-      prev.includes(toppingId) ? prev.filter((id) => id !== toppingId) : [...prev, toppingId]
-    );
+    setToppings((prev) => (prev.includes(toppingId) ? prev.filter((id) => id !== toppingId) : [...prev, toppingId]));
   };
 
-  const { editPizza, editIndex, updatePizzaAtIndex, setEditPizza, setEditIndex, addToCart } =
-    useCart();
+  const { editPizza, editIndex, updatePizzaAtIndex, setEditPizza, setEditIndex, addToCart } = useCart();
 
   // Load pizza if in edit mode
   useEffect(() => {
@@ -52,10 +49,7 @@ export const PizzaBuilder = () => {
       return;
     }
 
-    const price = calculatePizzaPrice(
-      { size, sauce, cheese, toppings },
-      { sizes, sauces, cheeses, toppings: toppingsOptions }
-    );
+    const price = calculatePizzaPrice({ size, sauce, cheese, toppings }, { sizes, sauces, cheeses, toppings: toppingsOptions });
 
     const pizza = { size, sauce, cheese, toppings, price };
 
@@ -75,7 +69,11 @@ export const PizzaBuilder = () => {
       <h2 className="text-4xl font-luckiest text-center mb-6">Build Your Pie</h2>
 
       <div className="flex justify-center mb-8">
-        <PizzaRenderer sauce={sauce} cheese={cheese} toppings={toppings} />
+        <PizzaRenderer
+          sauce={sauce}
+          cheese={cheese}
+          toppings={toppings}
+        />
       </div>
 
       <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -83,9 +81,7 @@ export const PizzaBuilder = () => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-xl font-luckiest ${
-              activeTab === tab ? "bg-redriot text-white" : "bg-white text-black border"
-            }`}>
+            className={`px-4 py-2 rounded-xl font-luckiest ${activeTab === tab ? "bg-redriot text-white" : "bg-white text-black border"}`}>
             {tab.toUpperCase()}
           </button>
         ))}
@@ -101,9 +97,7 @@ export const PizzaBuilder = () => {
                 <button
                   key={id}
                   onClick={() => setSize(id)}
-                  className={`px-4 py-2 rounded-xl ${
-                    size === id ? "bg-redriot text-white" : "bg-white text-black border"
-                  }`}>
+                  className={`px-4 py-2 rounded-xl ${size === id ? "bg-redriot text-white" : "bg-white text-black border"}`}>
                   {label.toUpperCase()}
                 </button>
               ))}
@@ -117,18 +111,14 @@ export const PizzaBuilder = () => {
             <div className="flex flex-wrap gap-4 mb-6">
               <button
                 onClick={() => setSauce("none")}
-                className={`px-4 py-2 rounded-xl ${
-                  sauce === "none" ? "bg-redriot text-white" : "bg-white text-black border"
-                }`}>
+                className={`px-4 py-2 rounded-xl ${sauce === "none" ? "bg-redriot text-white" : "bg-white text-black border"}`}>
                 NO SAUCE
               </button>
               {sauces.map(({ id, label }) => (
                 <button
                   key={id}
                   onClick={() => setSauce(id)}
-                  className={`px-4 py-2 rounded-xl ${
-                    sauce === id ? "bg-redriot text-white" : "bg-white text-black border"
-                  }`}>
+                  className={`px-4 py-2 rounded-xl ${sauce === id ? "bg-redriot text-white" : "bg-white text-black border"}`}>
                   {label.toUpperCase()}
                 </button>
               ))}
@@ -144,9 +134,7 @@ export const PizzaBuilder = () => {
                 <button
                   key={id}
                   onClick={() => setCheese(id)}
-                  className={`px-4 py-2 rounded-xl ${
-                    cheese === id ? "bg-redriot text-white" : "bg-white text-black border"
-                  }`}>
+                  className={`px-4 py-2 rounded-xl ${cheese === id ? "bg-redriot text-white" : "bg-white text-black border"}`}>
                   {label.toUpperCase()}
                 </button>
               ))}
@@ -167,9 +155,7 @@ export const PizzaBuilder = () => {
                 <button
                   key={id}
                   onClick={() => handleToppingChange(id)}
-                  className={`px-4 py-2 rounded-xl ${
-                    toppings.includes(id) ? "bg-redriot text-white" : "bg-white text-black border"
-                  }`}>
+                  className={`px-4 py-2 rounded-xl ${toppings.includes(id) ? "bg-redriot text-white" : "bg-white text-black border"}`}>
                   {label.toUpperCase()}
                 </button>
               ))}
@@ -190,10 +176,7 @@ export const PizzaBuilder = () => {
               <strong>Cheese:</strong> {getLabel(cheeses, cheese)}
             </p>
             <p>
-              <strong>Toppings:</strong>{" "}
-              {toppings.length > 0
-                ? toppings.map((id) => getLabel(toppingsOptions, id)).join(", ")
-                : "None"}
+              <strong>Toppings:</strong> {toppings.length > 0 ? toppings.map((id) => getLabel(toppingsOptions, id)).join(", ") : "None"}
             </p>
 
             <button

@@ -1,31 +1,139 @@
 {
+  "orders": [
+    {
+      "id": "0f56",
+      "cart": [
+        {
+          "size": "medium",
+          "sauce": "bbq-sauce",
+          "cheese": "extra-cheese",
+          "toppings": [
+            "onion",
+            "pepperoni",
+            "sausage",
+            "olive",
+            "spinach"
+          ],
+          "price": "21.75"
+        }
+      ],
+      "tip": "6",
+      "note": "Bake pizza extra crispy",
+      "orderType": "delivery",
+      "created_at": "7/6/2025, 1:58:56 PM"
+    }
+  ],
   "sizes": [
-    { "id": "small", "label": "Small", "price": 10 },
-    { "id": "medium", "label": "Medium", "price": 14 },
-    { "id": "large", "label": "Large", "price": 18 }
+    {
+      "id": "small",
+      "label": "Small",
+      "price": 10
+    },
+    {
+      "id": "medium",
+      "label": "Medium",
+      "price": 14
+    },
+    {
+      "id": "large",
+      "label": "Large",
+      "price": 18
+    }
   ],
   "sauces": [
-    { "id": "red-sauce", "label": "Red Sauce", "price": 1 },
-    { "id": "bbq-sauce", "label": "BBQ Sauce", "price": 1 },
-    { "id": "white-sauce", "label": "White Sauce", "price": 1.5 },
-    { "id": "none", "label": "No Sauce", "price": 0 }
+    {
+      "id": "red-sauce",
+      "label": "Red Sauce",
+      "price": 1
+    },
+    {
+      "id": "bbq-sauce",
+      "label": "BBQ Sauce",
+      "price": 1
+    },
+    {
+      "id": "white-sauce",
+      "label": "White Sauce",
+      "price": 1.5
+    },
+    {
+      "id": "none",
+      "label": "No Sauce",
+      "price": 0
+    }
   ],
   "cheeses": [
-    { "id": "cheese", "label": "Cheese", "price": 0 },
-    { "id": "extra-cheese", "label": "Extra Cheese", "price": 2 },
-    { "id": "none", "label": "No Cheese", "price": 0 }
+    {
+      "id": "cheese",
+      "label": "Cheese",
+      "price": 0
+    },
+    {
+      "id": "extra-cheese",
+      "label": "Extra Cheese",
+      "price": 2
+    },
+    {
+      "id": "none",
+      "label": "No Cheese",
+      "price": 0
+    }
   ],
   "toppings": [
-    { "id": "pepperoni", "label": "Pepperoni", "price": 1.25 },
-    { "id": "sausage", "label": "Sausage", "price": 1.25 },
-    { "id": "bacon", "label": "Bacon", "price": 1.5 },
-    { "id": "mushroom", "label": "Mushroom", "price": 0.75 },
-    { "id": "red-pepper", "label": "Red Pepper", "price": 0.75 },
-    { "id": "green-pepper", "label": "Green Pepper", "price": 0.75 },
-    { "id": "onion", "label": "Onion", "price": 0.75 },
-    { "id": "tomato", "label": "Tomato", "price": 0.75 },
-    { "id": "olive", "label": "Olive", "price": 0.75 },
-    { "id": "pineapple", "label": "Pineapple", "price": 0.75 },
-    { "id": "spinach", "label": "Spinach", "price": 0.75 }
+    {
+      "id": "pepperoni",
+      "label": "Pepperoni",
+      "price": 1.25
+    },
+    {
+      "id": "sausage",
+      "label": "Sausage",
+      "price": 1.25
+    },
+    {
+      "id": "bacon",
+      "label": "Bacon",
+      "price": 1.5
+    },
+    {
+      "id": "mushroom",
+      "label": "Mushroom",
+      "price": 0.75
+    },
+    {
+      "id": "red-pepper",
+      "label": "Red Pepper",
+      "price": 0.75
+    },
+    {
+      "id": "green-pepper",
+      "label": "Green Pepper",
+      "price": 0.75
+    },
+    {
+      "id": "onion",
+      "label": "Onion",
+      "price": 0.75
+    },
+    {
+      "id": "tomato",
+      "label": "Tomato",
+      "price": 0.75
+    },
+    {
+      "id": "olive",
+      "label": "Olive",
+      "price": 0.75
+    },
+    {
+      "id": "pineapple",
+      "label": "Pineapple",
+      "price": 0.75
+    },
+    {
+      "id": "spinach",
+      "label": "Spinach",
+      "price": 0.75
+    }
   ]
 }
