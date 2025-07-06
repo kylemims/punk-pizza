@@ -17,7 +17,7 @@ export const OrderSummary = () => {
   if (!ingredients) return null;
 
   const subtotal = cart.reduce((total, pizza) => {
-    return total + calculatePizzaPrice(pizza, ingredients);
+    return total + Number(calculatePizzaPrice(pizza, ingredients));
   }, 0);
 
   const total = subtotal + Number(tip || 0);
@@ -60,10 +60,10 @@ export const OrderSummary = () => {
           </p>
         )}
         <p>
-          <strong>Tip:</strong> ${tip}
+          <strong>Subtotal:</strong> ${Number(subtotal).toFixed(2)}
         </p>
         <p>
-          <strong>Subtotal:</strong> ${Number(subtotal).toFixed(2)}
+          <strong>Tip:</strong> ${Number(tip).toFixed(2)}
         </p>
         <p className="text-xl">
           <strong>Total:</strong> ${Number(total).toFixed(2)}

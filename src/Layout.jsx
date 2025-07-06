@@ -48,16 +48,16 @@ export const Layout = () => {
       </main>
       <Footer />
       <CartSidebar
-        cart={cart}
-        setCart={setCart}
+        // cart={cart}
+        // setCart={setCart}
         isOpen={isCartOpen}
         setIsOpen={setIsCartOpen}
-        orderType={orderType}
-        setOrderType={setOrderType}
-        tip={tip}
-        setTip={setTip}
-        note={note}
-        setNote={setNote}
+        // orderType={orderType}
+        // setOrderType={setOrderType}
+        // tip={tip}
+        // setTip={setTip}
+        // note={note}
+        // setNote={setNote}
         ingredients={ingredients}
       />
     </div>

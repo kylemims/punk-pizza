@@ -25,7 +25,7 @@ export const CartSidebar = ({ isOpen, setIsOpen }) => {
 
   const subtotal = cart.reduce((total, pizza) => {
     try {
-      return total + calculatePizzaPrice(pizza, ingredients);
+      return total + Number(calculatePizzaPrice(pizza, ingredients));
     } catch (err) {
       console.error("Price calculation failed for pizza:", pizza, err);
       return total;
