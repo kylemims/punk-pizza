@@ -9,11 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "json-server --watch db.json --port 3001",
-    "dev": "vite",
     "db": "json-server --watch db.json --port 3000"
-
   },
   "dependencies": {
+    "@faker-js/faker": "^9.9.0",
     "@stripe/react-stripe-js": "^3.7.0",
     "@stripe/stripe-js": "^7.4.0",
     "react": "^19.1.0",
