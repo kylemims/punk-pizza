@@ -7,45 +7,71 @@ export const Navbar = ({ setIsCartOpen }) => {
   return (
     <nav className="bg-redriot text-white font-luckiest w-full">
       <div className="w-full px-4 flex items-center justify-between h-16">
-        <a href="/" className="text-2xl hover:text-limepunk transition">
+        <a
+          href="/"
+          className="text-2xl hover:text-limepunk transition">
           Jake N' Bakes
         </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 text-lg items-center">
-          <a href="/pizza-builder" className="hover:text-limepunk">
+          <a
+            href="/pizza-builder"
+            className="hover:text-limepunk">
             Build Your Pie
           </a>
-          <a href="/order-list" className="hover:text-limepunk">
-            Order List
+          <a
+            href="/order-list"
+            className="hover:text-limepunk">
+            Orders
           </a>
-          <a href="/reports" className="hover:text-limepunk">
+          <a
+            href="/reports"
+            className="hover:text-limepunk">
             Reports
           </a>
-          <a href="/employees" className="hover:text-limepunk">
+          <a
+            href="/employees"
+            className="hover:text-limepunk">
             Employees
           </a>
-          <a href="/create-order" className="hover:text-limepunk">
+          <a
+            href="/create-order"
+            className="hover:text-limepunk">
             Create Order
           </a>
-          <a href="/profile" className="hover:text-limepunk">
+          <a
+            href="/profile"
+            className="hover:text-limepunk">
             Profile
           </a>
-          <a href="/logout" className="hover:text-limepunk">
+          <a
+            href="/logout"
+            className="hover:text-limepunk">
             Logout
           </a>
           <button
             onClick={() => setIsCartOpen(true)}
             className="hover:text-limepunk flex items-center">
-            <img src={CartIcon} alt="Cart" className="w-6 h-6 mr-1" />
+            <img
+              src={CartIcon}
+              alt="Cart"
+              className="w-6 h-6 mr-1"
+            />
             {/* <span>Cart</span> */}
           </button>
         </div>
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="focus:outline-none">
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
               {isOpen ? (
                 <path
                   strokeLinecap="round"
@@ -69,25 +95,39 @@ export const Navbar = ({ setIsCartOpen }) => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 text-lg">
-          <a href="/pizza-builder" className="block hover:text-limepunk">
+          <a
+            href="/pizza-builder"
+            className="block hover:text-limepunk">
             Build Your Pie
           </a>
-          <a href="/order-list" className="block hover:text-limepunk">
-            Order List
+          <a
+            href="/order-list"
+            className="block hover:text-limepunk">
+            Orders
           </a>
-          <a href="/reports" className="block hover:text-limepunk">
+          <a
+            href="/reports"
+            className="block hover:text-limepunk">
             Reports
           </a>
-          <a href="/employees" className="block hover:text-limepunk">
+          <a
+            href="/employees"
+            className="block hover:text-limepunk">
             Employees
           </a>
-          <a href="/create-order" className="block hover:text-limepunk">
+          <a
+            href="/create-order"
+            className="block hover:text-limepunk">
             Create Order
           </a>
-          <a href="/profile" className="block hover:text-limepunk">
+          <a
+            href="/profile"
+            className="block hover:text-limepunk">
             Profile
           </a>
-          <a href="/logout" className="block hover:text-limepunk">
+          <a
+            href="/logout"
+            className="block hover:text-limepunk">
             Logout
           </a>
           <button
@@ -96,7 +136,11 @@ export const Navbar = ({ setIsCartOpen }) => {
               setIsOpen(false); // Close menu after opening cart for better UX
             }}
             className="flex items-center hover:text-limepunk">
-            <img src={CartIcon} alt="Cart" className="w-6 h-6 mr-1" />
+            <img
+              src={CartIcon}
+              alt="Cart"
+              className="w-6 h-6 mr-1"
+            />
             <span>Cart</span>
           </button>
         </div>

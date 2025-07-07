@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import { App } from "./App";
 import { PizzaBuilder } from "./features/PizzaBuilder";
+import { OrderList } from "./components/OrderList";
 import { Layout } from "./Layout";
 import { Checkout } from "./features/Checkout";
 import { CartProvider } from "./context/CartProvider";
@@ -13,10 +14,25 @@ createRoot(document.getElementById("root")).render(
     <CartProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<App />} />
-            <Route path="pizza-builder" element={<PizzaBuilder />} />
-            <Route path="checkout" element={<Checkout />} />
+          <Route
+            path="/"
+            element={<Layout />}>
+            <Route
+              index
+              element={<App />}
+            />
+            <Route
+              path="pizza-builder"
+              element={<PizzaBuilder />}
+            />
+            <Route
+              path="order-list"
+              element={<OrderList />}
+            />
+            <Route
+              path="checkout"
+              element={<Checkout />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
