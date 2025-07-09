@@ -30,7 +30,7 @@ export const CheckoutForm = () => {
       tip,
       note,
       orderType,
-      created_at: new Date().toLocaleString(),
+      created_at: new Date().toISOString(),
     };
 
     try {
@@ -64,10 +64,7 @@ export const CheckoutForm = () => {
       onSubmit={handleSubmit}
       className="bg-white text-black rounded-lg p-6 w-[320px] sm:w-[400px] md:w-[450px] lg:w-[500px] space-y-4">
       <h3 className="text-2xl font-luckiest">Payment Info</h3>
-      <CardElement
-        options={cardStyle}
-        className="p-4 border border-black rounded-md"
-      />
+      <CardElement options={cardStyle} className="p-4 border border-black rounded-md" />
       <button
         type="submit"
         disabled={!stripe}

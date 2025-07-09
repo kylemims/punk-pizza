@@ -32,7 +32,7 @@
             "tomato",
             "mushroom"
           ],
-          "price": "23.38"
+          "price": "23.36"
         }
       ],
       "tip": "10",
@@ -595,6 +595,31 @@
       "note": "aspernatur delectatio excepturi vesica absum",
       "orderType": "takeout",
       "created_at": "6/25/2025, 11:54:06 PM"
+    },
+    {
+      "id": "e289",
+      "cart": [
+        {
+          "size": "medium",
+          "sauce": "bbq-sauce",
+          "cheese": "cheese",
+          "toppings": [
+            "sausage",
+            "red-pepper",
+            "green-pepper",
+            "pepperoni",
+            "mushroom",
+            "tomato",
+            "pineapple",
+            "spinach"
+          ],
+          "price": "22.00"
+        }
+      ],
+      "tip": "10",
+      "note": "make it good.",
+      "orderType": "takeout",
+      "created_at": "7/7/2025, 9:15:15 AM"
     }
   ],
   "sizes": [
