@@ -8,31 +8,19 @@ import { OrderList } from "./components/OrderList";
 import { Layout } from "./Layout";
 import { Checkout } from "./features/Checkout";
 import { CartProvider } from "./context/CartProvider";
+import { ReportsDashboard } from "./features/ReportsDashboard";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <CartProvider>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={<Layout />}>
-            <Route
-              index
-              element={<App />}
-            />
-            <Route
-              path="pizza-builder"
-              element={<PizzaBuilder />}
-            />
-            <Route
-              path="order-list"
-              element={<OrderList />}
-            />
-            <Route
-              path="checkout"
-              element={<Checkout />}
-            />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<App />} />
+            <Route path="pizza-builder" element={<PizzaBuilder />} />
+            <Route path="order-list" element={<OrderList />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="reports" element={<ReportsDashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
