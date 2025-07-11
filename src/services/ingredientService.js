@@ -1,13 +1,32 @@
 const API = "http://localhost:3000";
 
-const fetchIngredients = (type) => {
-  return fetch(`${API}/${type}`).then((res) => {
-    if (!res.ok) throw new Error("Failed to fetch " + type);
-    return res.json();
-  });
+// Unified fetch for all ingredients
+export const getIngredients = () => {
+  return fetch(`${API}/ingredients`).then((res) => res.json());
 };
 
-export const getSizes = () => fetchIngredients("sizes");
-export const getSauces = () => fetchIngredients("sauces");
-export const getCheeses = () => fetchIngredients("cheeses");
-export const getToppings = () => fetchIngredients("toppings");
+// Filtered functions for use throughout the app
+export const getSizes = () => {
+  return getIngredients().then((all) => all.filter((item) => item.type === "size"));
+};
+
+export const getSauces = () => {
+  return getIngredients().then((all) => all.filter((item) => item.type === "sauce"));
+};
+
+export const getCheeses = () => {
+  return getIngredients().then((all) => all.filter((item) => item.type === "cheese"));
+};
+
+export const getToppings = () => {
+  return getIngredients().then((all) => all.filter((item) => item.type === "topping"));
+};
+
+// PUT update for inventory adjustments
+export const updateIngredient = (ingredient) => {
+  return fetch(`${API}/ingredients/${ingredient.id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(ingredient),
+  });
+};
