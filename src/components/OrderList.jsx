@@ -30,6 +30,7 @@ export const OrderList = () => {
       const end = new Date(endDate);
       return orderDate >= start && orderDate <= end;
     })
+
     .sort((a, b) => {
       const dateA = new Date(a.created_at);
       const dateB = new Date(b.created_at);
@@ -134,7 +135,9 @@ export const OrderList = () => {
               </p>
               <p className="border-t border-gray-300 my-1 pt-1">
                 <strong>Total:</strong> $
-                {order.cart.reduce((sum, item) => sum + Number(item.price), 0) + Number(order.tip || 0)}
+                {Number(
+                  order.cart.reduce((sum, item) => sum + Number(item.price), 0) + Number(order.tip || 0)
+                ).toFixed(2)}
               </p>
               {/* <div className="flex sm:flex-col sm:items-center sm:justify-end"> */}
               <button

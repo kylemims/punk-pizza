@@ -30,7 +30,7 @@ export const CheckoutForm = () => {
       tip,
       note,
       orderType,
-      created_at: new Date().toISOString(),
+      created_at: new Date().toLocaleString(),
     };
 
     try {
