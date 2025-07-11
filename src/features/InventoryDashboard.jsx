@@ -60,21 +60,21 @@ export const InventoryDashboard = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-3xl font-luckiest mb-6">Inventory Overview 🧾</h2>
+      <h2 className="text-3xl font-luckiest mb-6 text-center">Inventory Overview 🧾</h2>
 
       <div className="overflow-x-auto">
         <table className="w-full text-left border border-gray-300 bg-white">
           <thead className="bg-redriot text-white">
             <tr>
-              <th className="p-2">#</th>
-              <th className="p-2">Ingredient</th>
-              <th className="p-2">Type</th>
-              <th className="p-2">Usage</th>
-              <th className="p-2">Cost</th>
-              <th className="p-2">On-Hand</th>
-              <th className="p-2">Par Level</th>
-              <th className="p-2">Status</th>
-              <th className="p-2">Suggested Order</th>
+              <th className="p-2 text-sm/4">#</th>
+              <th className="p-2 text-md/4">Ingredient</th>
+              <th className="p-2 text-md/4">Type</th>
+              <th className="p-2 text-md/4">Usage</th>
+              <th className="p-2 text-md/4">Cost</th>
+              <th className="p-2 text-md/4">On-Hand</th>
+              <th className="p-2 text-md/4">Par Level</th>
+              <th className="p-2 text-md/4">Status</th>
+              <th className="p-2 text-md/4">Suggested Order</th>
             </tr>
           </thead>
           <tbody>
@@ -82,12 +82,12 @@ export const InventoryDashboard = () => {
               const suggestedOrder = item.onHand < item.parLevel ? item.parLevel - item.onHand : 0;
               return (
                 <tr key={item.id} className="border-t border-gray-300">
-                  <td className="p-2">{index + 1}</td>
-                  <td className="p-2">{item.label}</td>
-                  <td className="p-2 capitalize">{item.type}</td>
-                  <td className="p-2">{item.usageCount}</td>
-                  <td className="p-2">${item.price?.toFixed(2) || "0.00"}</td>
-                  <td className="p-2">
+                  <td className="p-2 text-sm/4">{index + 1}</td>
+                  <td className="p-2 font-semibold">{item.label}</td>
+                  <td className="p-2 text-sm/4">{item.type}</td>
+                  <td className="p-2 text-sm/4">{item.usageCount}</td>
+                  <td className="p-2 text-sm/4">${item.price?.toFixed(2) || "0.00"}</td>
+                  <td className="p-2 text-sm/4">
                     <input
                       type="number"
                       value={item.onHand}

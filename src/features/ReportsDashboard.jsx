@@ -40,7 +40,7 @@ export const ReportsDashboard = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-luckiest text-limepunk mb-8 text-center">Sales Reports 💰</h2>
+      <h2 className="text-3xl font-luckiest text-black mb-8 text-center">Sales Reports 💰</h2>
 
       {/* Summary Panel */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">

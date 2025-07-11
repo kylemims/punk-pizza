@@ -5,12 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 export const CartSidebar = ({
   isOpen,
   setIsOpen,
-  // orderType,
-  // setOrderType,
-  // tip,
-  // setTip,
-  // note,
-  // setNote,
+
   ingredients,
 }) => {
   const {
@@ -67,8 +62,7 @@ export const CartSidebar = ({
                 <strong>Size:</strong> {getLabel("sizes", pizza.size)}
               </p>
               <p>
-                <strong>Sauce:</strong>{" "}
-                {pizza.sauce === "none" ? "None" : getLabel("sauces", pizza.sauce)}
+                <strong>Sauce:</strong> {pizza.sauce === "none" ? "None" : getLabel("sauces", pizza.sauce)}
               </p>
               <p>
                 <strong>Cheese:</strong> {getLabel("cheeses", pizza.cheese)}
@@ -84,9 +78,7 @@ export const CartSidebar = ({
               </p>
 
               <div className="flex justify-between items-center mt-2">
-                <button
-                  onClick={() => removeFromCart(index)}
-                  className="text-redriot underline text-sm">
+                <button onClick={() => removeFromCart(index)} className="text-redriot underline text-sm">
                   Remove
                 </button>
                 <button

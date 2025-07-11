@@ -12,7 +12,7 @@ export const Navbar = ({ setIsCartOpen }) => {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-lg items-center">
+        <div className="hidden md:flex space-x-8 text-lg/4 items-center">
           <a href="/pizza-builder" className="hover:text-limepunk">
             Build Your Pie
           </a>
@@ -22,8 +22,8 @@ export const Navbar = ({ setIsCartOpen }) => {
           <a href="/reports" className="hover:text-limepunk">
             Reports
           </a>
-          <a href="/employees" className="hover:text-limepunk">
-            Employees
+          <a href="/inventory" className="hover:text-limepunk">
+            Inventory
           </a>
           <a href="/logout" className="hover:text-limepunk">
             Logout
@@ -55,7 +55,7 @@ export const Navbar = ({ setIsCartOpen }) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2 text-lg">
+        <div className="md:hidden px-4 pb-4 space-y-2 text-lg/4">
           <a href="/pizza-builder" className="block hover:text-limepunk">
             Build Your Pie
           </a>
@@ -65,14 +65,9 @@ export const Navbar = ({ setIsCartOpen }) => {
           <a href="/reports" className="block hover:text-limepunk">
             Reports
           </a>
-          <a href="/employees" className="block hover:text-limepunk">
-            Employees
-          </a>
-          <a href="/create-order" className="block hover:text-limepunk">
-            Create Order
-          </a>
-          <a href="/profile" className="block hover:text-limepunk">
-            Profile
+
+          <a href="/inventory" className="block hover:text-limepunk">
+            Inventory
           </a>
           <a href="/logout" className="block hover:text-limepunk">
             Logout
