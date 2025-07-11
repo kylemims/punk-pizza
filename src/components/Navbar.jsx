@@ -7,7 +7,7 @@ export const Navbar = ({ setIsCartOpen }) => {
   return (
     <nav className="bg-redriot text-white font-luckiest w-full">
       <div className="w-full px-4 flex items-center justify-between h-16">
-        <a href="/" className="text-2xl hover:text-limepunk transition">
+        <a href="/" className="text-2xl/5 hover:text-limepunk transition">
           Jake N' Bakes
         </a>
 

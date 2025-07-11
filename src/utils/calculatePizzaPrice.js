@@ -1,24 +1,12 @@
-export const calculatePizzaPrice = (pizza, ingredients, tip) => {
-  const { size, sauce, cheese, toppings } = pizza;
+export const calculatePizzaPrice = (pizza, ingredients) => {
+  const findPrice = (id) => ingredients.find((i) => i.id === id)?.price || 0;
 
-  let total = 0;
+  const sizePrice = findPrice(pizza.size);
+  const saucePrice = pizza.sauce === "none" ? 0 : findPrice(pizza.sauce);
+  const cheesePrice = findPrice(pizza.cheese);
+  const toppingPrices = (pizza.toppings || []).map(findPrice);
 
-  const findPrice = (list, id) => {
-    const item = list.find((i) => i.id === id);
-    return item ? item.price : 0;
-  };
-
-  if (size) total += findPrice(ingredients.sizes, size, tip);
-  if (sauce && sauce !== "no-sauce") total += findPrice(ingredients.sauces, sauce, tip);
-  if (cheese && cheese !== "none") total += findPrice(ingredients.cheeses, cheese, tip);
-
-  if (Array.isArray(toppings)) {
-    toppings.forEach((topping) => {
-      if (topping !== "no-toppings") {
-        total += findPrice(ingredients.toppings, topping, tip);
-      }
-    });
-  }
+  const total = sizePrice + saucePrice + cheesePrice + toppingPrices.reduce((sum, p) => sum + p, 0);
 
   return total.toFixed(2);
 };

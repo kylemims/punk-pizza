@@ -4,7 +4,7 @@ import { useCart } from "../context/useCart.jsx";
 import { saveOrder } from "../services/orderService.js";
 import { useNavigate } from "react-router-dom";
 
-export const CheckoutForm = () => {
+export const CheckoutForm = ({ ingredients }) => {
   const stripe = useStripe();
   const elements = useElements();
   const { cart, tip, note, orderType, clearCart } = useCart();
@@ -34,7 +34,7 @@ export const CheckoutForm = () => {
     };
 
     try {
-      await saveOrder(order);
+      await saveOrder(order, ingredients);
       setMessage("Payment successful! Your order has been placed.");
       clearCart();
       setTimeout(() => navigate("/"), 2000);

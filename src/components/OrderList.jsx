@@ -8,6 +8,7 @@ export const OrderList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [orderToDelete, setOrderToDelete] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [sortBy, setSortBy] = useState("dateDesc"); // options: dateDesc, dateAsc, priceAsc, priceDesc
@@ -100,6 +101,11 @@ export const OrderList = () => {
             <option value="priceDesc">Price: High to Low</option>
           </select>
         </div>
+        {successMessage && (
+          <div className="mb-4 p-3 bg-green-100 text-green-800 border border-green-300 rounded">
+            {successMessage}
+          </div>
+        )}
       </div>
       {/* Filter + Sort Panel UI (functionality to be added later) */}
 
@@ -140,6 +146,8 @@ export const OrderList = () => {
                 ).toFixed(2)}
               </p>
               {/* <div className="flex sm:flex-col sm:items-center sm:justify-end"> */}
+
+              {/* Delete button triggers modal */}
               <button
                 onClick={() => {
                   setOrderToDelete(order.id);
@@ -200,6 +208,8 @@ export const OrderList = () => {
                   setOrders((prev) => prev.filter((o) => o.id !== orderToDelete));
                   setShowDeleteModal(false);
                   setOrderToDelete(null);
+                  setSuccessMessage("Order deleted successfully ✅");
+                  setTimeout(() => setSuccessMessage(""), 3000);
                 }}
                 className="bg-redriot text-white px-4 py-2 rounded-xl hover:bg-limepunk hover:text-black">
                 Yes, Delete

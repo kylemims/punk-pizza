@@ -3,24 +3,15 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { CartSidebar } from "./components/CartSidebar";
 import { useState, useEffect } from "react";
-import { getSizes, getSauces, getCheeses, getToppings } from "./services/ingredientService";
+import { getIngredients } from "./services/ingredientService";
 
 export const Layout = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const [ingredients, setIngredients] = useState({
-    sizes: [],
-    sauces: [],
-    cheeses: [],
-    toppings: [],
-  });
+  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
-    Promise.all([getSizes(), getSauces(), getCheeses(), getToppings()]).then(
-      ([sizes, sauces, cheeses, toppings]) => {
-        setIngredients({ sizes, sauces, cheeses, toppings });
-      }
-    );
+    getIngredients().then(setIngredients);
   }, []);
 
   return (

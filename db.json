@@ -22,25 +22,6 @@
       "created_at": "6/19/2025, 11:02:23 PM"
     },
     {
-      "id": "3IKKF",
-      "cart": [
-        {
-          "size": "large",
-          "sauce": "white-sauce",
-          "cheese": "extra-cheese",
-          "toppings": [
-            "tomato",
-            "mushroom"
-          ],
-          "price": "23.36"
-        }
-      ],
-      "tip": "10",
-      "note": "crebro caries unde tui ventosus",
-      "orderType": "delivery",
-      "created_at": "7/1/2025, 12:56:54 AM"
-    },
-    {
       "id": "d0By5",
       "cart": [
         {
@@ -223,27 +204,6 @@
       "note": "absum esse tres mollitia cupio",
       "orderType": "delivery",
       "created_at": "6/15/2025, 4:57:17 AM"
-    },
-    {
-      "id": "qLKd7",
-      "cart": [
-        {
-          "size": "small",
-          "sauce": "white-sauce",
-          "cheese": "extra-cheese",
-          "toppings": [
-            "spinach",
-            "mushroom",
-            "bacon",
-            "pineapple"
-          ],
-          "price": "15.72"
-        }
-      ],
-      "tip": "9",
-      "note": "varietas capillus desidero speculum videlicet",
-      "orderType": "delivery",
-      "created_at": "6/25/2025, 5:46:33 AM"
     },
     {
       "id": "62MWR",
@@ -459,25 +419,6 @@
       "created_at": "6/26/2025, 7:59:49 PM"
     },
     {
-      "id": "rO9rk",
-      "cart": [
-        {
-          "size": "small",
-          "sauce": "red-sauce",
-          "cheese": "extra-cheese",
-          "toppings": [
-            "red-pepper",
-            "mushroom"
-          ],
-          "price": "20.00"
-        }
-      ],
-      "tip": "10",
-      "note": "torqueo vallum stips distinctio cunctatio",
-      "orderType": "takeout",
-      "created_at": "6/24/2025, 11:03:21 AM"
-    },
-    {
       "id": "GKXur",
       "cart": [
         {
@@ -682,32 +623,239 @@
       "note": "thanks",
       "orderType": "delivery",
       "created_at": "7/10/2025, 5:55:04 PM"
+    },
+    {
+      "id": "03dc",
+      "cart": [
+        {
+          "size": "large",
+          "sauce": "red-sauce",
+          "cheese": "extra-cheese",
+          "toppings": [
+            "pepperoni",
+            "green-pepper",
+            "onion",
+            "olive"
+          ],
+          "price": "24.50"
+        }
+      ],
+      "tip": "6",
+      "note": "don't get shy with the olives, ok??",
+      "orderType": "delivery",
+      "created_at": "7/11/2025, 12:18:25 PM"
+    },
+    {
+      "id": "eaf9",
+      "cart": [
+        {
+          "size": "medium",
+          "sauce": "bbq-sauce",
+          "cheese": "cheese",
+          "toppings": [
+            "pepperoni",
+            "olive",
+            "tomato",
+            "sausage",
+            "bacon"
+          ],
+          "price": "20.50"
+        }
+      ],
+      "tip": "2",
+      "note": "burn the crust, please",
+      "orderType": "delivery",
+      "created_at": "7/11/2025, 4:34:46 PM"
     }
   ],
   "ingredients": [
-  { "id": "small", "label": "Small", "price": 10, "type": "size", "onHand": 100, "parLevel": 100 },
-  { "id": "medium", "label": "Medium", "price": 14, "type": "size", "onHand": 100, "parLevel": 100 },
-  { "id": "large", "label": "Large", "price": 18, "type": "size", "onHand": 100, "parLevel": 100 },
-
-  { "id": "red-sauce", "label": "Red Sauce", "price": 1, "type": "sauce", "onHand": 100, "parLevel": 100 },
-  { "id": "bbq-sauce", "label": "BBQ Sauce", "price": 1, "type": "sauce", "onHand": 100, "parLevel": 100 },
-  { "id": "white-sauce", "label": "White Sauce", "price": 1.5, "type": "sauce", "onHand": 100, "parLevel": 100 },
-  { "id": "none", "label": "No Sauce", "price": 0, "type": "sauce", "onHand": 100, "parLevel": 100 },
-
-  { "id": "cheese", "label": "Cheese", "price": 0, "type": "cheese", "onHand": 100, "parLevel": 100 },
-  { "id": "extra-cheese", "label": "Extra Cheese", "price": 2, "type": "cheese", "onHand": 100, "parLevel": 100 },
-  { "id": "none", "label": "No Cheese", "price": 0, "type": "cheese", "onHand": 100, "parLevel": 100 },
-
-  { "id": "pepperoni", "label": "Pepperoni", "price": 1.25, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "sausage", "label": "Sausage", "price": 1.25, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "bacon", "label": "Bacon", "price": 1.5, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "mushroom", "label": "Mushroom", "price": 0.75, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "red-pepper", "label": "Red Pepper", "price": 0.75, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "green-pepper", "label": "Green Pepper", "price": 0.75, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "onion", "label": "Onion", "price": 0.75, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "tomato", "label": "Tomato", "price": 0.75, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "olive", "label": "Olive", "price": 0.75, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "pineapple", "label": "Pineapple", "price": 0.75, "type": "topping", "onHand": 100, "parLevel": 100 },
-  { "id": "spinach", "label": "Spinach", "price": 0.75, "type": "topping", "onHand": 100, "parLevel": 100 }
-]
+    {
+      "id": "small",
+      "label": "Small",
+      "price": 10,
+      "type": "size",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 13
+    },
+    {
+      "id": "medium",
+      "label": "Medium",
+      "price": 14,
+      "type": "size",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 13
+    },
+    {
+      "id": "large",
+      "label": "Large",
+      "price": 18,
+      "type": "size",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 7
+    },
+    {
+      "id": "red-sauce",
+      "label": "Red Sauce",
+      "price": 1,
+      "type": "sauce",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 12
+    },
+    {
+      "id": "bbq-sauce",
+      "label": "BBQ Sauce",
+      "price": 1,
+      "type": "sauce",
+      "onHand": 99,
+      "parLevel": 100,
+      "usageCount": 11
+    },
+    {
+      "id": "white-sauce",
+      "label": "White Sauce",
+      "price": 1.5,
+      "type": "sauce",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 10
+    },
+    {
+      "id": "none",
+      "label": "No Cheese",
+      "price": 0,
+      "type": "cheese",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 0
+    },
+    {
+      "id": "cheese",
+      "label": "Cheese",
+      "price": 0,
+      "type": "cheese",
+      "onHand": 99,
+      "parLevel": 100,
+      "usageCount": 16
+    },
+    {
+      "id": "extra-cheese",
+      "label": "Extra Cheese",
+      "price": 2,
+      "type": "cheese",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 17
+    },
+    {
+      "id": "none",
+      "label": "No Cheese",
+      "price": 0,
+      "type": "cheese",
+      "onHand": 100,
+      "parLevel": 100
+    },
+    {
+      "id": "pepperoni",
+      "label": "Pepperoni",
+      "price": 1.25,
+      "type": "topping",
+      "onHand": 99,
+      "parLevel": 100,
+      "usageCount": 13
+    },
+    {
+      "id": "sausage",
+      "label": "Sausage",
+      "price": 1.25,
+      "type": "topping",
+      "onHand": 99,
+      "parLevel": 100,
+      "usageCount": 13
+    },
+    {
+      "id": "bacon",
+      "label": "Bacon",
+      "price": 1.5,
+      "type": "topping",
+      "onHand": 99,
+      "parLevel": 100,
+      "usageCount": 13
+    },
+    {
+      "id": "mushroom",
+      "label": "Mushroom",
+      "price": 0.75,
+      "type": "topping",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 6
+    },
+    {
+      "id": "red-pepper",
+      "label": "Red Pepper",
+      "price": 0.75,
+      "type": "topping",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 8
+    },
+    {
+      "id": "green-pepper",
+      "label": "Green Pepper",
+      "price": 0.75,
+      "type": "topping",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 9
+    },
+    {
+      "id": "onion",
+      "label": "Onion",
+      "price": 0.75,
+      "type": "topping",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 8
+    },
+    {
+      "id": "tomato",
+      "label": "Tomato",
+      "price": 0.75,
+      "type": "topping",
+      "onHand": 99,
+      "parLevel": 100,
+      "usageCount": 16
+    },
+    {
+      "id": "olive",
+      "label": "Olive",
+      "price": 0.75,
+      "type": "topping",
+      "onHand": 99,
+      "parLevel": 100,
+      "usageCount": 13
+    },
+    {
+      "id": "pineapple",
+      "label": "Pineapple",
+      "price": 0.75,
+      "type": "topping",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 6
+    },
+    {
+      "id": "spinach",
+      "label": "Spinach",
+      "price": 0.75,
+      "type": "topping",
+      "onHand": 100,
+      "parLevel": 100,
+      "usageCount": 15
+    }
+  ]
 }

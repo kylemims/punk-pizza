@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getIngredients, getAllOrders, updateIngredient } from "../services/ingredientService";
+import { getIngredients, updateIngredient } from "../services/ingredientService";
+import { getAllOrders } from "../services/orderService";
 
 export const InventoryDashboard = () => {
   const [ingredients, setIngredients] = useState([]);
