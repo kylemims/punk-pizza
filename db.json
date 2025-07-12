@@ -737,7 +737,7 @@
       "label": "Cheese",
       "price": 0,
       "type": "cheese",
-      "onHand": 99,
+      "onHand": 100,
       "parLevel": 100,
       "usageCount": 16
     },

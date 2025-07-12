@@ -107,8 +107,8 @@ export const InventoryDashboard = () => {
               return (
                 <tr key={item.id} className="border-t border-gray-300">
                   <td className="p-2 text-sm/4">{index + 1}</td>
-                  <td className="p-2 font-semibold">{item.label}</td>
-                  <td className="p-2 capitalize text-sm/4">{item.type}</td>
+                  <td className="p-2 text-sm/4 font-bold">{item.label}</td>
+                  <td className="p-2 capitalize text-xs/4 text-slate-500">{item.type}</td>
                   <td className="p-2 text-sm/4">{item.usageCount}</td>
                   <td className="p-2 text-sm/4">${item.price?.toFixed(2) || "0.00"}</td>
                   <td className="p-2 text-sm/4">
