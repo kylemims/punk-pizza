@@ -25,9 +25,7 @@ export const Navbar = ({ setIsCartOpen }) => {
           <a href="/inventory" className="hover:text-limepunk">
             Inventory
           </a>
-          <a href="/logout" className="hover:text-limepunk">
-            Logout
-          </a>
+
           <button onClick={() => setIsCartOpen(true)} className="hover:text-limepunk flex items-center">
             <img src={CartIcon} alt="Cart" className="w-8 h-8 mr-1" />
             {/* <span>Cart</span> */}
@@ -55,7 +53,7 @@ export const Navbar = ({ setIsCartOpen }) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2 text-lg/4">
+        <div className="md:hidden px-4 pb-4 space-y-4 text-lg/5">
           <a href="/pizza-builder" className="block hover:text-limepunk">
             Build Your Pie
           </a>
@@ -69,17 +67,15 @@ export const Navbar = ({ setIsCartOpen }) => {
           <a href="/inventory" className="block hover:text-limepunk">
             Inventory
           </a>
-          <a href="/logout" className="block hover:text-limepunk">
-            Logout
-          </a>
+
           <button
             onClick={() => {
               setIsCartOpen(true);
               setIsOpen(false); // Close menu after opening cart for better UX
             }}
-            className="flex items-center hover:text-limepunk">
-            <img src={CartIcon} alt="Cart" className="w-6 h-6 mr-1" />
+            className="flex items-end hover:text-limepunk">
             <span>Cart</span>
+            <img src={CartIcon} alt="Cart" className="w-6 h-6 ml-1 mb-0.5" />
           </button>
         </div>
       )}

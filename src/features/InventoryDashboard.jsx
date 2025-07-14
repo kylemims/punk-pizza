@@ -75,8 +75,8 @@ export const InventoryDashboard = () => {
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-3xl font-luckiest mb-6 text-center">Inventory Overview 🧾</h2>
+    <div className="p-8">
+      <h2 className="text-4xl font-luckiest mb-6 text-center">Inventory Overview</h2>
       <div className="mt-6 justify-end flex items-center">
         <button
           onClick={handleSaveInventory}

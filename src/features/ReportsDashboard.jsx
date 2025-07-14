@@ -5,19 +5,20 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell
 
 const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const BAR_COLORS = [
-  "#ff6347", // Sunday - tomato red
-  "#ffa500", // Monday - orange
+  "#ca28d4", // Sunday - pank
+  "#d42839", // Monday - riot red
   "#ffcc00", // Tuesday - cheese yellow
   "#32cd32", // Wednesday - basil green
-  "#40e0d0", // Thursday - teal
-  "#1e90ff", // Friday - sauce blue
-  "#9932cc", // Saturday - eggplant purple
+  "#289bd4", // Thursday - green
+  "#7f4248", // Friday - merlot
+  "#28d4b0", // Saturday - teal
 ];
 
 export const ReportsDashboard = () => {
   const [allOrders, setAllOrders] = useState([]);
   const [filteredOrders, setFilteredOrders] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState("");
+  const [sortMethod, setSortMethod] = useState("dateDesc");
 
   const [summary, setSummary] = useState({ totalOrders: 0, totalSales: 0, averageOrderValue: 0 });
   const [dailyBreakdown, setDailyBreakdown] = useState([]);
@@ -80,20 +81,35 @@ export const ReportsDashboard = () => {
     });
 
     const breakdownArray = Object.entries(breakdownMap).map(([date, total]) => ({ date, total }));
+
+    const sortedBreakdown = [...breakdownArray].sort((a, b) => {
+      switch (sortMethod) {
+        case "dateAsc":
+          return new Date(a.date) - new Date(b.date);
+        case "salesAsc":
+          return a.total - b.total;
+        case "salesDesc":
+          return b.total - a.total;
+        case "dateDesc":
+        default:
+          return new Date(b.date) - new Date(a.date);
+      }
+    });
+
     const weekdayArray = WEEKDAYS.map((day) => ({ day, total: weekdayMap[day] || 0 }));
     const topIngredientsArray = Object.entries(ingredientUsage)
       .map(([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count);
 
     setSummary({ totalOrders, totalSales, averageOrderValue });
-    setDailyBreakdown(breakdownArray);
+    setDailyBreakdown(sortedBreakdown);
     setSalesByWeekday(weekdayArray);
     setTopIngredients(topIngredientsArray);
-  }, [filteredOrders]);
+  }, [filteredOrders, sortMethod]);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-luckiest text-black mb-8 text-center">Sales Reports 💰</h2>
+      <h2 className="text-4xl font-luckiest text-black mb-8 text-center">Sales Reports</h2>
 
       {/* Filter by Month */}
       <div className="mb-6 text-center">
@@ -133,22 +149,36 @@ export const ReportsDashboard = () => {
           </button>
         </div>
         {showDailyBreakdown && (
-          <table className="w-full text-left transition-all duration-500 ease-in-out">
-            <thead>
-              <tr className="text-sm border-b">
-                <th className="py-2">Date</th>
-                <th className="py-2">Total Sales</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dailyBreakdown.map(({ date, total }) => (
-                <tr key={date} className="border-b">
-                  <td className="py-2">{date}</td>
-                  <td className="py-2">${total.toFixed(2)}</td>
+          <>
+            <div className="mb-4 flex justify-end items-center">
+              <label className="mr-2 font-semibold">Sort by:</label>
+              <select
+                value={sortMethod}
+                onChange={(e) => setSortMethod(e.target.value)}
+                className="border border-gray-400 rounded px-2 py-1 text-sm text-black">
+                <option value="dateDesc">Date (Newest First)</option>
+                <option value="dateAsc">Date (Oldest First)</option>
+                <option value="salesAsc">Sales (Low to High)</option>
+                <option value="salesDesc">Sales (High to Low)</option>
+              </select>
+            </div>
+            <table className="w-full text-left transition-all duration-500 ease-in-out">
+              <thead>
+                <tr className="text-sm border-b">
+                  <th className="py-2">Date</th>
+                  <th className="py-2">Total Sales</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {dailyBreakdown.map(({ date, total }) => (
+                  <tr key={date} className="border-b">
+                    <td className="py-2">{date}</td>
+                    <td className="py-2">${total.toFixed(2)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
         )}
       </div>
 
@@ -194,7 +224,7 @@ export const ReportsDashboard = () => {
       </div>
 
       {/* Sales by Weekday Chart */}
-      <div className="bg-white text-black p-4 rounded-xl shadow">
+      <div className="bg-white text-black text-sm p-4 rounded-xl shadow">
         <h3 className="text-xl font-bold mb-4">Sales by Day of the Week</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={salesByWeekday}>

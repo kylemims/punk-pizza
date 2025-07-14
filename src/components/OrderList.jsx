@@ -25,10 +25,17 @@ export const OrderList = () => {
   const filteredOrders = orders
     .filter((order) => {
       if (!startDate || !endDate) return true;
+      // if start and end are the same, extend end to end of day
 
       const orderDate = new Date(order.created_at);
       const start = new Date(startDate);
       const end = new Date(endDate);
+
+      // Set start to beginning of the day
+      start.setHours(0, 0, 0, 0);
+      // Set end to end of the day
+      end.setHours(23, 59, 59, 999);
+
       return orderDate >= start && orderDate <= end;
     })
 
