@@ -10,6 +10,7 @@ import { Checkout } from "./features/Checkout";
 import { CartProvider } from "./context/CartProvider";
 import { ReportsDashboard } from "./features/ReportsDashboard";
 import { InventoryDashboard } from "./features/InventoryDashboard";
+import { AboutPage } from "./components/AboutPage";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="checkout" element={<Checkout />} />
             <Route path="reports" element={<ReportsDashboard />} />
             <Route path="inventory" element={<InventoryDashboard />} />
+            <Route path="about" element={<AboutPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
