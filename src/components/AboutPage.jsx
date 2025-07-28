@@ -13,7 +13,7 @@ export const AboutPage = () => (
     </p>
 
     <h3 className="text-2xl font-bold mt-6">Key Features</h3>
-    <ul className="list-disc ml-6 mb-4">
+    <ul className="ml-4 mb-4 list-none">
       <li>🔸 Dynamic Pizza Builder with live pricing</li>
       <li>🔸 Cart Sidebar with editable orders and notes</li>
       <li>🔸 Real-Time Inventory Dashboard based on sales</li>

@@ -1,0 +1,299 @@
+.bottom-tab-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(215, 38, 56);
+  /* background: rgb(72, 149, 31); */
+  border-top: 1px solid rgba(214, 195, 120, 0.2);
+  padding: 0.75rem 0 calc(0.75rem + env(safe-area-inset-bottom));
+  z-index: 1000;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  min-width: 60px;
+}
+
+/* .tab-item:hover {
+  background: rgba(249, 211, 66, 0.1);
+  transform: translateY(-2px);
+}
+
+.tab-item.active {
+  background: rgba(249, 211, 66, 0.15);
+} */
+
+.tab-item.active::before {
+  content: "";
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: rgb(175, 255, 0);
+  border-radius: 2px;
+}
+
+.tab-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: all 0.2s ease;
+}
+
+.tab-item:hover .tab-icon,
+.tab-item.active .tab-icon {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgb(175, 255, 0));
+  transform: scale(1.1);
+}
+
+.tab-label {
+  font-size: 0.7rem;
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+.tab-item:hover .tab-label,
+.tab-item.active .tab-label {
+  color: rgb(175, 255, 0);
+}
+
+/* Profile Tab Special Styling */
+.profile-tab {
+  position: relative;
+}
+
+.profile-indicator {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: rgb(175, 255, 0);
+  border-radius: 50%;
+  animation: profilePulse 2s infinite;
+}
+
+@keyframes profilePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  right: 1rem;
+  width: 280px;
+  background: linear-gradient(135deg, rgba(16, 16, 16, 0.98), rgba(34, 34, 34, 0.95));
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(175, 255, 0, 0.3);
+  animation: dropdownSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dropdownSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.developer-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(175, 255, 0);
+}
+
+.developer-avatar {
+  width: 50px;
+  height: 50px;
+  background: rgb(175, 255, 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.developer-intro h4 {
+  color: white;
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: 1.2rem;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 0.75px;
+}
+
+.developer-intro p {
+  color: rgb(199, 204, 188);
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+}
+
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-stack span {
+  background: rgba(90, 120, 111, 0.3);
+  color: #eee;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(34, 34, 34, 0.5);
+  border: 1px solid rgb(175, 255, 0, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #eee;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  background: rgba(34, 34, 34, 0.8);
+  border-color: rgb(175, 255, 0);
+  transform: translateX(4px);
+}
+
+.contact-link img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.contact-link:hover img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgb(175, 255, 0));
+}
+
+.external-icon {
+  width: 12px;
+  height: 12px;
+  color: #aaa;
+  margin-left: auto;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover .external-icon {
+  color: rgb(175, 255, 0);
+}
+
+.project-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(249, 211, 66, 0.1);
+}
+
+.project-footer p {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .profile-dropdown {
+    right: 0.5rem;
+    left: 0.5rem;
+    width: auto;
+  }
+
+  .tab-container {
+    padding: 0 0.5rem;
+  }
+
+  .tab-item {
+    min-width: 50px;
+  }
+
+  .tab-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .tab-label {
+    font-size: 0.65rem;
+  }
+}
+
+/* iPad and larger tablets */
+@media (min-width: 768px) {
+  .bottom-tab-nav {
+    display: none; /* Hide on desktop, keep top nav */
+  }
+}
