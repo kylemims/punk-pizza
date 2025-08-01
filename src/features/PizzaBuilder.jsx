@@ -15,7 +15,7 @@ export const PizzaBuilder = () => {
   const [showModal, setShowModal] = useState(false);
   const { setIsCartOpen } = useOutletContext();
 
-  const { editPizza, editIndex, updatePizzaAtIndex, setEditPizza, setEditIndex, addToCart } = useCart();
+  const { editPizza, editIndex, updatePizzaAtIndex, addToCart } = useCart();
 
   useEffect(() => {
     getIngredients().then(setIngredients);

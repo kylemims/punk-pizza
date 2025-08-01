@@ -42,7 +42,7 @@ export const InventoryDashboard = () => {
     }));
 
     setIngredients(updated);
-  }, [orders]);
+  }, [orders, ingredients]);
 
   const handleStockChange = (id, value) => {
     const updated = ingredients.map((item) =>
@@ -146,11 +146,3 @@ export const InventoryDashboard = () => {
     </div>
   );
 };
-
-// const determineType = (id, sizes, sauces, cheeses, toppings) => {
-//   if (sizes.find((i) => i.id === id)) return "size";
-//   if (sauces.find((i) => i.id === id)) return "sauce";
-//   if (cheeses.find((i) => i.id === id)) return "cheese";
-//   if (toppings.find((i) => i.id === id)) return "topping";
-//   return "unknown";
-// };

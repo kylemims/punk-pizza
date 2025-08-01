@@ -15,7 +15,7 @@ export const CheckoutForm = ({ ingredients }) => {
     e.preventDefault();
     if (!stripe || !elements) return;
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
+    const { error } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
     });
@@ -35,9 +35,11 @@ export const CheckoutForm = ({ ingredients }) => {
 
     try {
       await saveOrder(order, ingredients);
-      setMessage("Payment successful! Your order has been placed.");
+      setMessage(
+        "Payment successful! Enjoy your pie and don't be shy... leave a tip! And by tip, I mean your feedback would be greatly appreciated 😉"
+      );
       clearCart();
-      setTimeout(() => navigate("/"), 2000);
+      setTimeout(() => navigate("/"), 5000);
     } catch (error) {
       setMessage("❌ Payment succeeded but failed to save order.");
       console.error("Error saving order:", error);
