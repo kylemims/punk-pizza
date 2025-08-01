@@ -11,7 +11,7 @@
   "server": "json-server --watch db.json --port 3001",
   "db": "json-server --watch db.json --port 3000",
   "start": "json-server --watch db.json --port 8080"
-}
+},
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
     "@stripe/react-stripe-js": "^3.7.0",
