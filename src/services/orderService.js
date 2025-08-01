@@ -3,7 +3,7 @@ import { updateIngredient } from "./ingredientService";
 
 //* fetch all order data from db.json
 export const getAllOrders = () => {
-  return fetch("http://localhost:3000/orders").then((response) => {
+  return fetch("https://punk-pizza-api.onrender.com/orders").then((response) => {
     if (!response.ok) {
       throw new Error("Failed to fetch orders");
     }
@@ -22,7 +22,7 @@ export const saveOrder = async (orderData, currentIngredients) => {
     await Promise.all(updatePromises);
 
     // Step 3: Save the order itself
-    const response = await fetch("http://localhost:3000/orders", {
+    const response = await fetch("https://punk-pizza-api.onrender.com/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export const saveOrder = async (orderData, currentIngredients) => {
 
 //* DELETE orders from db.json
 export const deleteOrder = (orderId) => {
-  return fetch(`http://localhost:3000/orders/${orderId}`, {
+  return fetch(`https://punk-pizza-api.onrender.com/orders/${orderId}`, {
     method: "DELETE",
   });
 };
