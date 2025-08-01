@@ -1,4 +1,4 @@
-const API = "https://punk-pizza-api.onrender.com/";
+const API = "https://punk-pizza-api.onrender.com";
 
 // Unified fetch for all ingredients
 export const getIngredients = () => {
