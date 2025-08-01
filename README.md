@@ -38,7 +38,7 @@ Built with React, Tailwind, and a JSON backend hosted on Render.
 
 ## 🌐 Live Demo
 
-- **Live App:** [pizza.kylemims.com](https://pizza.kylemims.com)
+- **Live App:** [pizza.kylemims.dev](https://pizza.kylemims.dev)
 - **Code Repo:** [github.com/kylemims/punk-pizza](https://github.com/kylemims/punk-pizza)
 
 ---
