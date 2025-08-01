@@ -1,3 +1,6 @@
+// IMPORTANT: This is the entry point for Render's npm start
+// Don't move this into /src or Render will not find json-server
+
 // server.js
 const jsonServer = require("json-server");
 const corsMiddleware = require("./cors-middleware");
