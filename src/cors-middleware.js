@@ -1,4 +1,6 @@
 // cors-middleware.js
+/* eslint-env node */
+// eslint-disable-next-line no-undef
 module.exports = (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); // Allow requests from any origin
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE"); // Supported HTTP methods

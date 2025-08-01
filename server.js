@@ -2,7 +2,9 @@
 // Don't move this into /src or Render will not find json-server
 
 // server.js
+// eslint-disable-next-line no-undef
 const jsonServer = require("json-server");
+// eslint-disable-next-line no-undef
 const corsMiddleware = require("./src/cors-middleware");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
