@@ -8,7 +8,6 @@
     @apply bg-crust text-black;
   }
 
-  /* Hide horizontal scrollbar */
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
