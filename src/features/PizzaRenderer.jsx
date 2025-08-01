@@ -1,5 +1,5 @@
 export const PizzaRenderer = ({ sauce, cheese, toppings }) => {
-  const basePath = "/src/assets/";
+  const basePath = "/assets/";
 
   const layers = [
     { src: `${basePath}crust.svg`, isCrust: true },
@@ -19,9 +19,7 @@ export const PizzaRenderer = ({ sauce, cheese, toppings }) => {
           key={index}
           src={src}
           alt={`layer-${index}`}
-          className={`absolute inset-0 ${
-            isCrust ? "scale-110" : "scale-95"
-          } w-full h-full object-contain`}
+          className={`absolute inset-0 ${isCrust ? "scale-110" : "scale-95"} w-full h-full object-contain`}
         />
       ))}
     </div>

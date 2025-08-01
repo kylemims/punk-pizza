@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CartIcon from "../assets/cart-icon.svg";
+import CartIcon from "/assets/cart-icon.svg";
 
 export const Navbar = ({ setIsCartOpen }) => {
   const [isOpen, setIsOpen] = useState(false);

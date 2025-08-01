@@ -9,11 +9,11 @@ export const BottomTabNav = () => {
   const dropdownRef = useRef(null);
 
   const tabItems = [
-    { icon: "/src/assets/pizza-home.svg", label: "Home", path: "/" },
-    { icon: "/src/assets/add-new.svg", label: "New Pie", path: "/pizza-builder" },
-    { icon: "/src/assets/reports-icon.svg", label: "Reports", path: "/reports" },
+    { icon: "/assets/pizza-home.svg", label: "Home", path: "/" },
+    { icon: "/assets/add-new.svg", label: "New Pie", path: "/pizza-builder" },
+    { icon: "/assets/reports-icon.svg", label: "Reports", path: "/reports" },
     {
-      icon: "/src/assets/profile.svg",
+      icon: "/assets/profile.svg",
       label: "Developer",
       action: "profile",
     },
@@ -21,25 +21,25 @@ export const BottomTabNav = () => {
 
   const profileLinks = [
     {
-      icon: "/src/assets/email.svg",
+      icon: "/assets/email.svg",
       label: "Email Me",
       href: "mailto:kylemims.dev@gmail.com",
       external: true,
     },
     {
-      icon: "/src/assets/github.svg",
+      icon: "/assets/github.svg",
       label: "GitHub",
       href: "https://www.github.com/kylemims",
       external: true,
     },
     {
-      icon: "/src/assets/linked.svg",
+      icon: "/assets/linked.svg",
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/kylemims-dev/",
       external: true,
     },
     {
-      icon: "/src/assets/portfolio.svg",
+      icon: "/assets/portfolio.svg",
       label: "Portfolio",
       href: "https://www.kylemims.com", // Update when deployed
       external: true,

@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import GitHubIcon from "../assets/github-icon.svg";
-import LinkedInIcon from "../assets/linked-icon.svg";
-import EmailIcon from "../assets/email-white.svg";
-import WebsiteIcon from "../assets/website-icon.svg";
+import GitHubIcon from "/assets/github-icon.svg";
+import LinkedInIcon from "/assets/linked-icon.svg";
+import WebsiteIcon from "/assets/website-icon.svg";
 
 export const Footer = () => {
   return (
@@ -15,7 +14,7 @@ export const Footer = () => {
           <img src={LinkedInIcon} alt="LinkedIn" className="w-6 h-6 hover:opacity-80 transition" />
         </a>
         <a href="https://kylemims.dev" target="_blank" rel="noreferrer">
-          <img src={WebsiteIcon} alt="Email" className="w-6 h-6 hover:opacity-80 transition" />
+          <img src={WebsiteIcon} alt="Website" className="w-6 h-6 hover:opacity-80 transition" />
         </a>
       </div>
 

@@ -42,13 +42,13 @@ export const AboutPage = () => (
     <h3 className="text-2xl font-bold mt-6">Let’s Connect!</h3>
     <div className="flex gap-4 mt-2">
       <a href="https://www.linkedin.com/in/kylemims-dev" target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/linked-red.svg" alt="LinkedIn" className="w-6 h-6" />
+        <img src="/assets/linked-red.svg" alt="LinkedIn" className="w-6 h-6" />
       </a>
       <a href="https://www.github.com/kylemims" target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/github-red.svg" alt="GitHub" className="w-6 h-6" />
+        <img src="/assets/github-red.svg" alt="GitHub" className="w-6 h-6" />
       </a>
       <a href="mailto:kylemims.dev@gmail.com">
-        <img src="src/assets/email-red.svg" alt="Email" className="w-6 h-6" />
+        <img src="/assets/email-red.svg" alt="Email" className="w-6 h-6" />
       </a>
     </div>
 
