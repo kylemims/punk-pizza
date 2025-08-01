@@ -5,7 +5,7 @@
 // eslint-disable-next-line no-undef
 const jsonServer = require("json-server");
 // eslint-disable-next-line no-undef
-const corsMiddleware = require("./src/cors-middleware");
+const corsMiddleware = require("./cors-middleware");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
