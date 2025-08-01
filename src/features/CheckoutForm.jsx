@@ -62,7 +62,7 @@ export const CheckoutForm = ({ ingredients }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white text-black rounded-lg p-6 w-[320px] sm:w-[400px] md:w-[450px] lg:w-[500px] space-y-4">
+      className="w-[90vw] max-w-[700px] min-w-[280px] md:w-[700px] md:max-w-[700px] md:min-w-[700px] mx-auto bg-white text-black rounded-lg p-6 space-y-4">
       <h3 className="text-2xl font-luckiest">Payment Info</h3>
       <CardElement options={cardStyle} className="p-4 border border-black rounded-md" />
       <button

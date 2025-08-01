@@ -14,7 +14,7 @@ export const Checkout = () => {
   return (
     <section className="min-h-screen bg-crust text-black flex flex-col items-center justify-center px-4">
       <h2 className="text-4xl font-luckiest mb-8">Checkout</h2>
-      <div className="flex flex-col md:flex-row gap-8 items-start justify-center w-full max-w-5xl">
+      <div className="flex flex-col md:flex-col gap-8 items-center justify-center w-full max-w-5xl">
         <OrderSummary />
         <Elements stripe={stripePromise}>
           <CheckoutForm ingredients={ingredients} />

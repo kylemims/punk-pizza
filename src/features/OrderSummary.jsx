@@ -29,7 +29,7 @@ export const OrderSummary = () => {
 
   const total = subtotal + Number(tip || 0);
   return (
-    <section className="p-6 max-w-2xl mx-auto bg-white shadow-md rounded-xl mt-8 text-black">
+    <section className="w-[90vw] max-w-[700px] min-w-[280px] md:w-[700px] md:max-w-[700px] md:min-w-[700px] mx-auto p-6 bg-white shadow-md rounded-xl mt-8 text-black">
       <h2 className="text-3xl font-luckiest mb-4">Order Summary</h2>
 
       {cart.map((pizza, index) => (
