@@ -3,7 +3,7 @@ services:
     name: punk-pizza
     env: node
     buildCommand: npm install && npm run build
-    startCommand: npm start
+    startCommand: node ./server.js
     envVars:
       - key: NODE_VERSION
         value: 22.16.0
