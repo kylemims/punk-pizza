@@ -3,7 +3,7 @@
 
 // server.js
 const jsonServer = require("json-server");
-const corsMiddleware = require("./cors-middleware");
+const corsMiddleware = require("./src/cors-middleware");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
