@@ -10,6 +10,7 @@ export const PizzaRenderer = ({ sauce, cheese, toppings }) => {
       isCrust: false,
     })),
   ].filter(Boolean);
+  console.log("🍕 Pizza layers:", layers);
 
   return (
     <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px]">

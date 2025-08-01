@@ -2,7 +2,7 @@
   "name": "shepherds-refactor",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  // "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "server": "json-server --watch db.json --port 3001",
     "db": "json-server --watch db.json --port 3000",
-    "start": "json-server --watch db.json --port 8080"
+    "start": "json-server --watch db.json --port 8080 --host 0.0.0.0 --middlewares cors-middleware.js"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
