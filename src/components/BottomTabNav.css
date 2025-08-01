@@ -4,7 +4,6 @@
   left: 0;
   right: 0;
   background: rgb(215, 38, 56);
-  /* background: rgb(72, 149, 31); */
   border-top: 1px solid rgba(214, 195, 120, 0.2);
   padding: 0.75rem 0 calc(0.75rem + env(safe-area-inset-bottom));
   z-index: 1000;
@@ -33,15 +32,6 @@
   position: relative;
   min-width: 60px;
 }
-
-/* .tab-item:hover {
-  background: rgba(249, 211, 66, 0.1);
-  transform: translateY(-2px);
-}
-
-.tab-item.active {
-  background: rgba(249, 211, 66, 0.15);
-} */
 
 .tab-item.active::before {
   content: "";
@@ -82,7 +72,6 @@
   color: rgb(175, 255, 0);
 }
 
-/* Profile Tab Special Styling */
 .profile-tab {
   position: relative;
 }
@@ -110,7 +99,6 @@
   }
 }
 
-/* Profile Dropdown */
 .profile-dropdown {
   position: absolute;
   bottom: calc(100% + 0.5rem);
@@ -265,7 +253,6 @@
   backdrop-filter: blur(2px);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 480px) {
   .profile-dropdown {
     right: 0.5rem;
@@ -291,9 +278,8 @@
   }
 }
 
-/* iPad and larger tablets */
 @media (min-width: 768px) {
   .bottom-tab-nav {
-    display: none; /* Hide on desktop, keep top nav */
+    display: none;
   }
 }

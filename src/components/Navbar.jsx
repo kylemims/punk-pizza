@@ -28,7 +28,6 @@ export const Navbar = ({ setIsCartOpen }) => {
 
           <button onClick={() => setIsCartOpen(true)} className="hover:text-limepunk flex items-center">
             <img src={CartIcon} alt="Cart" className="w-8 h-8 mr-1" />
-            {/* <span>Cart</span> */}
           </button>
         </div>
 
@@ -71,7 +70,7 @@ export const Navbar = ({ setIsCartOpen }) => {
           <button
             onClick={() => {
               setIsCartOpen(true);
-              setIsOpen(false); // Close menu after opening cart for better UX
+              setIsOpen(false);
             }}
             className="flex items-end hover:text-limepunk">
             <span>Cart</span>

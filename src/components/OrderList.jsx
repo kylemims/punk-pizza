@@ -11,7 +11,7 @@ export const OrderList = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [sortBy, setSortBy] = useState("dateDesc"); // options: dateDesc, dateAsc, priceAsc, priceDesc
+  const [sortBy, setSortBy] = useState("dateDesc");
   const ORDERS_PER_PAGE = 10;
 
   useEffect(() => {
@@ -25,15 +25,13 @@ export const OrderList = () => {
   const filteredOrders = orders
     .filter((order) => {
       if (!startDate || !endDate) return true;
-      // if start and end are the same, extend end to end of day
 
       const orderDate = new Date(order.created_at);
       const start = new Date(startDate);
       const end = new Date(endDate);
 
-      // Set start to beginning of the day
+      //TODO: implement filtering for one day - if the start and end dates are the same
       start.setHours(0, 0, 0, 0);
-      // Set end to end of the day
       end.setHours(23, 59, 59, 999);
 
       return orderDate >= start && orderDate <= end;
@@ -114,7 +112,6 @@ export const OrderList = () => {
           </div>
         )}
       </div>
-      {/* Filter + Sort Panel UI (functionality to be added later) */}
 
       {paginatedOrders.map((order) => (
         <div key={order.id} className="border border-black rounded mb-4 p-4 bg-white shadow">
@@ -163,8 +160,6 @@ export const OrderList = () => {
                 className="text-sm text-red-500 underline hover:text-red-700 ml-4">
                 Delete Order
               </button>
-
-              {/* </div> */}
             </div>
           </div>
 

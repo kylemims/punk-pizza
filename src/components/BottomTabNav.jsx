@@ -41,7 +41,7 @@ export const BottomTabNav = () => {
     {
       icon: "/assets/portfolio.svg",
       label: "Portfolio",
-      href: "https://www.kylemims.com", // Update when deployed
+      href: "https://www.kylemims.dev",
       external: true,
     },
   ];

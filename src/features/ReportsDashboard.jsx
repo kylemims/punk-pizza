@@ -5,13 +5,13 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell
 
 const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const BAR_COLORS = [
-  "#ca28d4", // Sunday - pank
+  "#ca28d4", // Sunday - punk pink
   "#d42839", // Monday - riot red
   "#ffcc00", // Tuesday - cheese yellow
   "#32cd32", // Wednesday - basil green
-  "#289bd4", // Thursday - green
+  "#289bd4", // Thursday - mean green
   "#7f4248", // Friday - merlot
-  "#28d4b0", // Saturday - teal
+  "#28d4b0", // Saturday - teal for real
 ];
 
 export const ReportsDashboard = () => {

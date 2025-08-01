@@ -1,6 +1,5 @@
 import { useCart } from "../context/useCart";
 import { calculatePizzaPrice } from "../utils/calculatePizzaPrice";
-// import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 

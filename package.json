@@ -4,14 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "server": "json-server --watch db.json --port 3001",
-  "db": "json-server --watch db.json --port 3000",
-  "start": "json-server --watch db.json --port 8080"
-},
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "server": "json-server --watch db.json --port 3001",
+    "db": "json-server --watch db.json --port 3000",
+    "start": "json-server --watch db.json --port 8080"
+  },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
     "@stripe/react-stripe-js": "^3.7.0",
@@ -19,6 +19,7 @@
     "dayjs": "^1.11.13",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-is": "^19.1.1",
     "react-router-dom": "^7.6.3",
     "recharts": "^3.1.0"
   },

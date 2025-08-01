@@ -13,7 +13,19 @@ const generatePizza = () => {
   const sizes = ["small", "medium", "large"];
   const sauces = ["red-sauce", "bbq-sauce", "white-sauce"];
   const cheeses = ["cheese", "extra-cheese"];
-  const toppings = ["pepperoni", "sausage", "bacon", "mushroom", "red-pepper", "green-pepper", "onion", "tomato", "olive", "pineapple", "spinach"];
+  const toppings = [
+    "pepperoni",
+    "sausage",
+    "bacon",
+    "mushroom",
+    "red-pepper",
+    "green-pepper",
+    "onion",
+    "tomato",
+    "olive",
+    "pineapple",
+    "spinach",
+  ];
 
   const randomToppings = faker.helpers.arrayElements(toppings, faker.number.int({ min: 0, max: 5 }));
 

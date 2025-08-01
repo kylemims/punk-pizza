@@ -1,7 +1,7 @@
 // Refactor and clean up PizzaBuilder.jsx
 //*---------------------------------------
 
-//? TODO: button styling and behavior
+// TODO: button styling and behavior
 // export const SelectionButton = ({
 //   isSelected,
 //   onClick,
@@ -21,7 +21,7 @@
 
 //*----------------------------------------
 
-//? TODO: TabContent Wrapper
+// TODO: TabContent Wrapper
 
 // export const TabContent = ({ title, children, containerClass = "flex gap-4 mb-6" }) => {
 //   return (
@@ -36,7 +36,7 @@
 
 //*----------------------------------------
 
-//? TODO: single selection option
+// TODO: single selection option
 
 // import { SelectionButton } from './SelectionButton';
 // import { TabContent } from './TabContent';
@@ -66,7 +66,7 @@
 
 //*----------------------------------------
 
-//? TODO: multiple secletions
+// TODO: multiple selections
 
 // import { SelectionButton } from './SelectionButton';
 // import { TabContent } from './TabContent';
@@ -94,7 +94,7 @@
 
 //*----------------------------------------
 
-//? TODO: Refactored PizzaBuilder.jsx
+// TODO: Refactored PizzaBuilder.jsx
 
 // import { useState, useEffect } from "react";
 // import { PizzaRenderer } from "./PizzaRenderer";
@@ -106,7 +106,6 @@
 // import { TabContent } from "../components/TabContent";
 
 // export const PizzaBuilder = () => {
-//   // ...existing state and effects...
 
 //   const tabs = ["size", "sauce", "cheese", "toppings", "review"];
 

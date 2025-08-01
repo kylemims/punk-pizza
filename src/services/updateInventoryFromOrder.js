@@ -1,6 +1,6 @@
 import { getIngredients, updateIngredient } from "./ingredientService";
 
-// Accepts a new order and adjusts inventory based on ingredient usage
+//* Accepts a new order and adjusts inventory based on ingredient usage
 export const updateInventoryFromOrder = async (order) => {
   const allIngredients = await getIngredients();
 

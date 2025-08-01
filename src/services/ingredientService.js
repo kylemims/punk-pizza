@@ -5,7 +5,6 @@ export const getIngredients = () => {
   return fetch(`${API}/ingredients`).then((res) => res.json());
 };
 
-// Filtered functions for use throughout the app
 export const getSizes = () => {
   return getIngredients().then((all) => all.filter((item) => item.type === "size"));
 };

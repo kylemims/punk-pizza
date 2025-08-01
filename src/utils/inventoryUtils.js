@@ -1,5 +1,3 @@
-// src/utils/inventoryUtils.js
-
 /**
  * Deducts ingredients from the inventory based on pizza orders.
  * @param {Array} ingredients - The current list of ingredients (with id, onHand, etc.)
@@ -7,7 +5,7 @@
  * @returns {Array} - Updated list of ingredients
  */
 export const deductInventory = (ingredients, cart) => {
-  // Make a shallow copy to avoid direct mutation
+  // Making a shallow copy to avoid direct mutation
   const updated = [...ingredients];
 
   cart.forEach((pizza) => {

@@ -1,8 +1,7 @@
-// import { updateInventoryFromOrder } from "./updateInventoryFromOrder";
 import { deductInventory } from "../utils/inventoryUtils.js";
 import { updateIngredient } from "./ingredientService";
 
-//? fetch all order data from db.json
+//* fetch all order data from db.json
 export const getAllOrders = () => {
   return fetch("http://localhost:3000/orders").then((response) => {
     if (!response.ok) {
@@ -12,7 +11,7 @@ export const getAllOrders = () => {
   });
 };
 
-//? POST orders to db.json
+//* POST orders to db.json
 export const saveOrder = async (orderData, currentIngredients) => {
   try {
     // Step 1: Deduct inventory based on this order's cart
@@ -41,15 +40,15 @@ export const saveOrder = async (orderData, currentIngredients) => {
     throw err;
   }
 };
-//? DELETE orders from db.json
 
+//* DELETE orders from db.json
 export const deleteOrder = (orderId) => {
   return fetch(`http://localhost:3000/orders/${orderId}`, {
     method: "DELETE",
   });
 };
 
-//TODO: Uncomment if you need to update orders
+//TODO: Uncomment this section if adding functionality to update orders in the future
 // export const updateOrder = async (id, updatedData) => {
 //   const res = await fetch(`http://localhost:8088/orders/${id}`, {
 //     method: "PUT",
