@@ -20,6 +20,7 @@ export const PizzaRenderer = ({ sauce, cheese, toppings }) => {
           src={src}
           alt={`layer-${index}`}
           className={`absolute inset-0 ${isCrust ? "scale-110" : "scale-95"} w-full h-full object-contain`}
+          loading="lazy"
         />
       ))}
     </div>

@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 export const Hero = () => {
   return (
     <section className="bg-crust text-black flex flex-col items-center justify-center text-center px-4 py-12 md:py-24">
-      <img src="/assets/dude-pizza.svg" alt="Jake the Zombie Pizza" className="w-64 md:w-96 mb-8" />
+      <img
+        src="/assets/dude-pizza.svg"
+        alt="Jake the Zombie Pizza"
+        className="w-64 md:w-96 mb-8"
+        loading="lazy"
+      />
       <h1 className="text-4xl md:text-6xl font-luckiest mb-4">Welcome to Jake N' Bakes</h1>
       <Link
         to="/pizza-builder"
