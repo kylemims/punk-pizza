@@ -224,7 +224,7 @@ export const ReportsDashboard = () => {
       </div>
 
       {/* Sales by Weekday Chart */}
-      <div className="bg-white text-black text-sm p-4 rounded-xl shadow">
+      <div className="bg-white text-black text-sm p-4 rounded-xl shadow mb-8">
         <h3 className="text-xl font-bold mb-4">Sales by Day of the Week</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={salesByWeekday}>

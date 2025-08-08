@@ -1,0 +1,15 @@
+.pizza-guy-logo {
+  min-width: 360px;
+  max-width: 420px;
+  margin-bottom: 30px;
+  /* height: auto; */
+  /* margin-bottom: 20px; */
+}
+
+@media (max-width: 768px) {
+  .pizza-guy-logo {
+    min-width: 240px;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+}

@@ -134,7 +134,7 @@ export const InventoryDashboard = () => {
           </tbody>
         </table>
       </div>
-      <div className="mt-6 justify-end flex items-center">
+      <div className="mt-6 justify-end flex items-center mb-">
         <button
           onClick={handleSaveInventory}
           disabled={isSaving}

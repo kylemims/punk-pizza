@@ -4,8 +4,15 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
   body {
     @apply bg-crust text-black;
+    overscroll-behavior: none;
+    scroll-padding-top: 4rem;
   }
 
   /* Hide horizontal scrollbar */
@@ -15,5 +22,36 @@
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+  * {
+    /* -webkit-transform: translateZ(0); */
+    /* transform: translateZ(0); */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  #root {
+    .page-enter {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .page-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .page-exit {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .page-exit-active {
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
   }
 }
